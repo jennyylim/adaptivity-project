@@ -1,0 +1,80 @@
+/* Colours */
+/* 
+Primary Colours
+black
+#000000
+white
+#ffffff
+teal-dark
+#28c49e
+teal
+#40edc3
+
+Secondary Colours
+Brown
+#C46C28
+Blue (links and hover)
+#284FC4
+Red
+#C44528
+
+
+<a class="cta_button" href="#">
+This is a button
+<i class="arrow right"></i>
+</a>
+
+
+*/
+
+body {
+    background-color:#EDEDED;
+  }
+  
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 68px;
+    /* color: #284FC4; */
+  }
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 44px;
+    /* color: #000000; */
+  }
+
+  h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    /* color: #000000; */
+  }
+  
+  h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 21px;
+    color: #000000;
+  }
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    /* color: #000000; */
+  }
+
+  blog-title {
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 2.4em;
+    /* color: #000000; */
+  }
+
+  p-thai {
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    /* color: #000000; */
+    /* Thai */
+  }

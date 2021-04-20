@@ -1,0 +1,15 @@
+body {
+  background-color: black;
+}
+
+.txt-color {
+  color: white;
+}
+
+.input-color {
+  background-color: black;
+}
+
+::placeholder {
+  color: white;
+}

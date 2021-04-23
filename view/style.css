@@ -29,14 +29,19 @@ This is a button
         
         .navbar,
         .navbar-menu {
-            display: inline-block;
-            text-align: center;
-            padding: 10px 49px;
-            width: 100%;
+            display: block;
+            margin: 0;
+            background-color: #000000;
+            padding: 50px 20px;
+            height: 100%;
+            vertical-align: middle;
         }
         
-        .sign-up {
-            margin-left: 80px;
+        .navbar>.container.navbar {
+            display: flex;
+        }
+        /* .sign-up {
+            margin-left: 50px;
             padding: 10px 20px;
             color: #303030;
             background-color: #28c49e;
@@ -58,11 +63,13 @@ This is a button
         .sign-up:hover {
             background-color: #284FC4;
             color: #ffffff;
-        }
+        } */
         
-        .container.navbar {
-            display: inline;
-            margin: 30px 0;
+        div.container.navbar {
+            display: block;
+            margin: auto;
+            padding: 0;
+            height: 88px;
             max-width: 1200px;
         }
         
@@ -71,21 +78,21 @@ This is a button
         }
         
         .navbar-menu {
-            margin-left: 150px;
+            margin-left: auto;
+            margin-right: 0;
         }
         
         .navbar-menu,
         .navigation-links,
-        .nav-list,
-        .nav-links {
+        li.nav-list,
+        a.nav-links {
             display: inline;
             list-style: none;
-            padding: 0 1rem;
-            margin: 0;
             color: #ffffff;
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
             cursor: pointer;
+            vertical-align: middle;
             text-decoration: none;
             transition: 0.2s all linear;
             -webkit-transition: 0.2s all linear;
@@ -94,8 +101,13 @@ This is a button
             -o-transition: 0.2s all linear;
         }
         
-        .nav-list,
-        .nav-links :hover {
+        li.nav-list,
+        a.nav-links {
+            padding: 0 7px;
+        }
+        
+        li.nav-list,
+        a.nav-links :hover {
             color: #284FC4;
         }
         /* -------------------- INDEX -------------------- */
@@ -108,13 +120,14 @@ This is a button
             text-align: center;
         }
         
-        h1 {
+        .h1.index {
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
             font-size: 68px;
             text-align: center;
             color: #ffffff;
-            margin-top: 80px;
+            margin: auto;
+            padding-top: 50px;
         }
         
         .cta_button {
@@ -133,6 +146,7 @@ This is a button
             -moz-transition: 0.2s all linear;
             -ms-transition: 0.2s all linear;
             -o-transition: 0.2s all linear;
+            text-decoration: none;
         }
         
         .cta_button:hover {
@@ -158,12 +172,14 @@ This is a button
             font-size: 21px;
         }
         
-        p {
+        .p.index {
             font-family: 'Poppins', sans-serif;
             font-weight: normal;
             font-size: 16px;
-            color: #9B9B9B;
+            color: #ffffff;
             text-align: center;
+            margin: 0;
+            padding: 20px;
         }
         
         blog-title {

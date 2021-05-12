@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const user = require('./model/user');
 
 const app = express();
+app.set('view engine', 'ejs');
 
 
 const PORT = process.env.PORT || 4000;

@@ -6,11 +6,11 @@
         "express": "^4.17.1",
         "mongoose": "^5.12.8",
         "morgan": "^1.10.0",
-        "nodemon": "^2.0.7",
         "passport": "^0.4.1"
     },
     "devDependencies": {
         "connect-flash": "^0.1.1",
-        "express-session": "^1.17.1"
+        "express-session": "^1.17.1",
+        "nodemon": "^2.0.7"
     }
 }

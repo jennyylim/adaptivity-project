@@ -23,7 +23,7 @@ const userSchema = new Schema({
         type: Array
     },
     isResult:{
-        type: String,
+        type: Array,
         required: true
     }
 }, { timestamps: true });

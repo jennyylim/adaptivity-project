@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head.ejs')%>
-
 <body>
 
-<p> Welcome <%= user.name%></p>
-<a href="/users/logout" class="btn btn-secondary">Logout</a>
-
+<%if (typeof errors != 'undefined') {%>
+    <% errors.forEach(function(error) { %>
+        <%= error.msg %>
+<%});%>
+<% } %>
 </body>
 </html>

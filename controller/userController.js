@@ -18,7 +18,7 @@ router.post('/register', (req,res)=>{
 
     //check pass length
     if(password.length < 6){
-        errors.push({msg: 'Password have to be more than 6 letters.git'})
+        errors.push({msg: 'Password have to be more than 6 letters'})
     }
 
     if(errors.length > 0){

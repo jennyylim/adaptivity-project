@@ -1,4 +1,5 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -8,19 +9,25 @@ const bodyParser = require('body-parser');
 const user = require('./model/user');
 const app = express();
 const dbURI = require('./config/keys').MongoURI;
-//register view engine
+//register views engine
 //views is the default folder it look for
 // if other folder is used, put another app.set below, --> app.set('<mainfoldername>', '<foldername>');
+const PORT = process.env.PORT || 4000;
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true}) //2nd parameter to stop deprecation warning
-    .then((result)=>app.listen(3000))
+    .then((result)=>app.listen(PORT, console.log("started server")))
     .catch((err) => console.log(err));
 
+// app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 //middleware & static file
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:true})); // a middleware that allow drawing of input for data from form
 
-
-const PORT = process.env.PORT || 4000;
 var MongoDBStore = require('connect-mongodb-session')(session);
+
+app.use('/', require('./routes/security'));
+
+app.use('/users', require('./controller/userController'));
+
+

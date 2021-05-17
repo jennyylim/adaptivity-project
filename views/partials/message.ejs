@@ -3,9 +3,12 @@
 
 <body>
 
+
 <%if (typeof errors != 'undefined') {%>
     <% errors.forEach(function(error) { %>
-        <%= error.msg %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= error.msg %>
+        </div>
 <%});%>
 <% } %>
 </body>

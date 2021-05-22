@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const user = require('./model/user');
 const app = express();
 const dbURI = require('./config/keys').MongoURI;
+
 //register views engine
 //views is the default folder it look for
 // if other folder is used, put another app.set below, --> app.set('<mainfoldername>', '<foldername>');
@@ -16,6 +17,9 @@ const PORT = process.env.PORT || 4000;
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }) //2nd parameter to stop deprecation warning
     .then((result) => app.listen(PORT, console.log("started server")))
     .catch((err) => console.log(err));
+
+// Passport Config
+require('./config/passport')(passport);
 
 // app.use(expressLayouts);
 app.set('view engine', 'ejs');
@@ -43,6 +47,7 @@ app.use(flash());
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
     next();
 })
 

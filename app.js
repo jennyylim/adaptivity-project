@@ -68,11 +68,15 @@ app.use('/users', require('./controller/userController'));
 //localhost:4000/testone
 
 app.post('/testone',(req, res) =>{
+    //posting the data from form at dashboard
     const {email, password} = req.body;
+    //isAnswer is the array within USER schema in mongodb
     req.user.isAnswer = req.body;
+    //saving to USER
     req.user.save();
     console.log(req.body);
     console.log(req.user.isAnswer);
+    //Page redirect after successful. can refer to console.log successful comment if want to be sure
     res.redirect('/users/dashboard');
     //redirect - feel free to change
     console.log('successful');

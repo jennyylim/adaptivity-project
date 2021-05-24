@@ -30,11 +30,20 @@ app.use(express.urlencoded({extended:true})); // a middleware that allow drawing
 
 var MongoDBStore = require('connect-mongodb-session')(session);
 
+const store = new MongoDBStore({
+    uri: dbURI,
+    collection: 'sessions'
+});
+
+//creating sessions in mongodb, destroyed at logout-- no longer linked to user
 app.use(
     session({
         secret: 'secret',
         resave: true,
-        saveUninitialized: true
+        saveUninitialized: true,
+        store: store,
+        unset: 'destroy',
+        name: 'session cookie'
     })
 );
 
@@ -55,5 +64,18 @@ app.use((req,res,next)=>{
 app.use('/', require('./routes/security'));
 
 app.use('/users', require('./controller/userController'));
+
+//localhost:4000/testone
+
+app.post('/testone',(req, res) =>{
+    const {email, password} = req.body;
+    req.user.isAnswer = req.body;
+    req.user.save();
+    console.log(req.body);
+    console.log(req.user.isAnswer);
+    res.redirect('/users/dashboard');
+    //redirect - feel free to change
+    console.log('successful');
+})
 
 

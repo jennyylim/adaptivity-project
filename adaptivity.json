@@ -13,6 +13,8 @@
         { "id": "Frontend", "group": 5, "value": 10 },
         { "id": "Engineering", "group": 5, "value": 10 },
 
+        { "id": "Product Manager", "group": 2, "value": 25 },
+
         { "id": "Product Management", "group": 2, "value": 25 },
         { "id": "UI", "group": 2, "value": 10 },
         { "id": "UX", "group": 2, "value": 10 },

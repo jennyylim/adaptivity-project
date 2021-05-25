@@ -14,8 +14,8 @@ const dbURI = require('./config/keys').MongoURI;
 //views is the default folder it look for
 // if other folder is used, put another app.set below, --> app.set('<mainfoldername>', '<foldername>');
 const PORT = process.env.PORT || 4000;
-mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true}) //2nd parameter to stop deprecation warning
-    .then((result)=>app.listen(PORT, console.log("started server")))
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }) //2nd parameter to stop deprecation warning
+    .then((result) => app.listen(PORT, console.log("started server")))
     .catch((err) => console.log(err));
 
 // Passport Config
@@ -26,7 +26,7 @@ app.set('view engine', 'ejs');
 
 //middleware & static file
 app.use(express.static('public'));
-app.use(express.urlencoded({extended:true})); // a middleware that allow drawing of input for data from form
+app.use(express.urlencoded({ extended: true })); // a middleware that allow drawing of input for data from form
 
 var MongoDBStore = require('connect-mongodb-session')(session);
 
@@ -53,7 +53,7 @@ app.use(passport.session());
 
 app.use(flash());
 
-app.use((req,res,next)=>{
+app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
@@ -67,9 +67,9 @@ app.use('/users', require('./controller/userController'));
 
 //localhost:4000/testone
 
-app.post('/testone',(req, res) =>{
+app.post('/testone', (req, res) => {
     //posting the data from form at dashboard
-    const {email, password} = req.body;
+    const { email, password } = req.body;
     //isAnswer is the array within USER schema in mongodb
     req.user.isAnswer = req.body;
     //saving to USER
@@ -81,5 +81,3 @@ app.post('/testone',(req, res) =>{
     //redirect - feel free to change
     console.log('successful');
 })
-
-

@@ -1,381 +1,646 @@
 {
     "nodes": [
-      {"id": "Mobile", "group": 1},
-      {"id": "Android", "group": 1},
-      {"id": "IOS", "group": 1},
-      {"id": "Robotics", "group": 1},
-      {"id": "Backend", "group": 1},
-      {"id": "Quality Analysis", "group": 1},
-      {"id": "Software", "group": 1},
-      {"id": "Hardware", "group": 1},
-      {"id": "Web", "group": 1},
-      {"id": "Industrial", "group": 1},
-      {"id": "Frontend", "group": 1},
-      {"id": "Engineering", "group": 1},
+        { "id": "Mobile", "group": 5, "value": 25 },
+        { "id": "Android", "group": 5, "value": 10 },
+        { "id": "IOS", "group": 5, "value": 10 },
+        { "id": "Robotics", "group": 5, "value": 10 },
+        { "id": "Backend", "group": 5, "value": 10 },
+        { "id": "Quality Analysis", "group": 5, "value": 10 },
+        { "id": "Software", "group": 5, "value": 10 },
+        { "id": "Hardware", "group": 5, "value": 10 },
+        { "id": "Industrial", "group": 5, "value": 10 },
+        { "id": "Web", "group": 5, "value": 10 },
+        { "id": "Frontend", "group": 5, "value": 10 },
+        { "id": "Engineering", "group": 5, "value": 10 },
 
-      {"id": "Product Management", "group": 2},
-      {"id": "UI", "group": 2},
-      {"id": "UX", "group": 2},
-      {"id": "BI", "group": 2},
-      {"id": "Scrum Master", "group": 2},
-      {"id": "Design", "group": 2},
-      {"id": "Market Research", "group": 2},
-      {"id": "Experiences", "group": 2},
-      {"id": "DevOps", "group": 2},
-      {"id": "Automation", "group": 2},
+        { "id": "Product Manager", "group": 2, "value": 25 },
 
-      {"id": "Security", "group": 3},
-      {"id": "Penetration Tester", "group": 3},
-      {"id": "Security Architect", "group": 3},
-      {"id": "Reliability", "group": 3},
-      {"id": "Data Engineer", "group": 3},
-      {"id": "System Architect", "group": 3},
-      {"id": "Network", "group": 3},
-      {"id": "Engineer", "group": 3},
-      {"id": "Cloud", "group": 3},
+        { "id": "Product Management", "group": 2, "value": 25 },
+        { "id": "UI", "group": 2, "value": 10 },
+        { "id": "UX", "group": 2, "value": 10 },
+        { "id": "BI", "group": 2, "value": 10 },
+        { "id": "Scrum Master", "group": 2, "value": 10 },
+        { "id": "Design", "group": 2, "value": 10 },
+        { "id": "Market Research", "group": 2, "value": 10 },
+        { "id": "Experiences", "group": 2, "value": 10 },
+        { "id": "DevOps", "group": 2, "value": 10 },
+        { "id": "Automation", "group": 2, "value": 10 },
 
-      
-      {"id": "Marketing", "group": 4},
-      {"id": "CRM", "group": 4},
-      {"id": "SEO", "group": 4},
-      {"id": "SMO", "group": 4},
-      {"id": "SEM", "group": 4},
-      {"id": "PR", "group": 4},
-      {"id": "Performance", "group": 4},
+        { "id": "Security", "group": 3, "value": 25 },
+        { "id": "Penetration Tester", "group": 3, "value": 10 },
+        { "id": "Security Architect", "group": 3, "value": 10 },
+        { "id": "Reliability", "group": 3, "value": 10 },
+        { "id": "Data Engineer", "group": 3, "value": 10 },
+        { "id": "System Architect", "group": 3, "value": 10 },
+        { "id": "Network", "group": 3, "value": 10 },
+        { "id": "Engineer", "group": 3, "value": 10 },
+        { "id": "Cloud", "group": 3, "value": 10 },
 
-      {"id": "Customer Service", "group": 5},
-      {"id": "Admin", "group": 5},
-      {"id": "HR", "group": 5},
-      {"id": "Sales", "group": 5},
-      {"id": "Accounting", "group": 5},
-      {"id": "Investors Relations", "group": 5},
-      {"id": "Finance", "group": 5},
-      {"id": "Operations", "group": 5}
+
+        { "id": "Marketing", "group": 4, "value": 25 },
+        { "id": "CRM", "group": 4, "value": 10 },
+        { "id": "SEO", "group": 4, "value": 10 },
+        { "id": "SMO", "group": 4, "value": 10 },
+        { "id": "SEM", "group": 4, "value": 10 },
+        { "id": "PR", "group": 4, "value": 10 },
+        { "id": "Performance", "group": 4, "value": 10 },
+
+        { "id": "Customer Service", "group": 5, "value": 25 },
+        { "id": "Admin", "group": 5, "value": 10 },
+        { "id": "HR", "group": 5, "value": 10 },
+        { "id": "Sales", "group": 5, "value": 10 },
+        { "id": "Accounting", "group": 5, "value": 10 },
+        { "id": "Investors Relations", "group": 5, "value": 10 },
+        { "id": "Finance", "group": 5, "value": 10 },
+        { "id": "Operations", "group": 5, "value": 10 }
 
     ],
     "links": [
-      
-      {"source": "Mobile", "target": "Android", "value": 5},
-      {"source": "Mobile", "target": "IOS", "value": 5},
-      {"source": "Mobile", "target": "Backend", "value": 5},
-      {"source": "Mobile", "target": "Frontend", "value": 5},
-      {"source": "Mobile", "target": "Web", "value": 5},
-      {"source": "Mobile", "target": "Engineering", "value": 5},
 
-      {"source": "Engineering", "target": "Android", "value": 5},
-      {"source": "Engineering", "target": "IOS", "value": 5},
-      {"source": "Engineering", "target": "Backend", "value": 5},
-      {"source": "Engineering", "target": "Web", "value": 5},
-      {"source": "Engineering", "target": "Robotics", "value": 5},
-      {"source": "Engineering", "target": "Hardware", "value": 5},
-      {"source": "Engineering", "target": "Software", "value": 5},
-      {"source": "Engineering", "target": "Industrial", "value": 5},
-      {"source": "Engineering", "target": "Mobile", "value": 5},
-      {"source": "Engineering", "target": "Frontend", "value": 5},
-      {"source": "Engineering", "target": "Quality Analysis", "value": 5},
-      {"source": "Engineering", "target": "Engineering", "value": 5},
-      
+        { "source": "Mobile", "target": "Android", "value": 5 },
+        { "source": "Mobile", "target": "IOS", "value": 5 },
+        { "source": "Mobile", "target": "Backend", "value": 5 },
+        { "source": "Mobile", "target": "Frontend", "value": 5 },
+        { "source": "Mobile", "target": "Web", "value": 5 },
+        { "source": "Mobile", "target": "Engineering", "value": 5 },
 
-      {"source": "Android", "target": "Software", "value": 3},
-      {"source": "Android", "target": "IOS", "value": 5},
-      {"source": "Android", "target": "Backend", "value": 5},
-      {"source": "Android", "target": "Web", "value": 5},
-      {"source": "Android", "target": "Robotics", "value": 5},
-      {"source": "Android", "target": "Hardware", "value": 5},
-      {"source": "Android", "target": "Software", "value": 5},
-      {"source": "Android", "target": "Industrial", "value": 5},
-      {"source": "Android", "target": "Mobile", "value": 5},
-      {"source": "Android", "target": "Frontend", "value": 5},
-      {"source": "Android", "target": "Quality Analysis", "value": 5},
-
-    
-      {"source": "IOS", "target": "Backend", "value": 5},
-      {"source": "IOS", "target": "Web", "value": 5},
-      {"source": "IOS", "target": "Robotics", "value": 5},
-      {"source": "IOS", "target": "Hardware", "value": 5},
-      {"source": "IOS", "target": "Software", "value": 5},
-      {"source": "IOS", "target": "Industrial", "value": 5},
-      {"source": "IOS", "target": "Mobile", "value": 5},
-      {"source": "IOS", "target": "Frontend", "value": 5},
-      {"source": "IOS", "target": "Quality Analysis", "value": 5},
-
-      
-      {"source": "Backend", "target": "Web", "value": 5},
-      {"source": "Backend", "target": "Robotics", "value": 5},
-      {"source": "Backend", "target": "Hardware", "value": 5},
-      {"source": "Backend", "target": "Software", "value": 5},
-      {"source": "Backend", "target": "Industrial", "value": 5},
-      {"source": "Backend", "target": "Mobile", "value": 5},
-      {"source": "Backend", "target": "Frontend", "value": 5},
-      {"source": "Backend", "target": "Quality Analysis", "value": 5},
-      
-
-      
-      {"source": "Web", "target": "Robotics", "value": 5},
-      {"source": "Web", "target": "Hardware", "value": 5},
-      {"source": "Web", "target": "Software", "value": 5},
-      {"source": "Web", "target": "Industrial", "value": 5},
-      {"source": "Web", "target": "Mobile", "value": 5},
-      {"source": "Web", "target": "Frontend", "value": 5},
-      {"source": "Web", "target": "Quality Analysis", "value": 5},
+        { "source": "Engineering", "target": "Android", "value": 5 },
+        { "source": "Engineering", "target": "IOS", "value": 5 },
+        { "source": "Engineering", "target": "Backend", "value": 5 },
+        { "source": "Engineering", "target": "Web", "value": 5 },
+        { "source": "Engineering", "target": "Robotics", "value": 5 },
+        { "source": "Engineering", "target": "Hardware", "value": 5 },
+        { "source": "Engineering", "target": "Software", "value": 5 },
+        { "source": "Engineering", "target": "Industrial", "value": 5 },
+        { "source": "Engineering", "target": "Mobile", "value": 5 },
+        { "source": "Engineering", "target": "Frontend", "value": 5 },
+        { "source": "Engineering", "target": "Quality Analysis", "value": 5 },
+        { "source": "Engineering", "target": "Engineering", "value": 5 },
 
 
-      {"source": "Robotics", "target": "Hardware", "value": 5},
-      {"source": "Robotics", "target": "Software", "value": 5},
-      {"source": "Robotics", "target": "Industrial", "value": 5},
-      {"source": "Robotics", "target": "Mobile", "value": 5},
-      {"source": "Robotics", "target": "Frontend", "value": 5},
-      {"source": "Robotics", "target": "Quality Analysis", "value": 5},
-
-      
-      {"source": "Hardware", "target": "Software", "value": 5},
-      {"source": "Hardware", "target": "Industrial", "value": 5},
-      {"source": "Hardware", "target": "Mobile", "value": 5},
-      {"source": "Hardware", "target": "Frontend", "value": 5},
-      {"source": "Hardware", "target": "Quality Analysis", "value": 5},
-
-      
-      {"source": "Software", "target": "Industrial", "value": 5},
-      {"source": "Software", "target": "Mobile", "value": 5},
-      {"source": "Software", "target": "Frontend", "value": 5},
-      {"source": "Software", "target": "Quality Analysis", "value": 5},
-
-      
-      {"source": "Software", "target": "Mobile", "value": 5},
-      {"source": "Software", "target": "Frontend", "value": 5},
-      {"source": "Software", "target": "Quality Analysis", "value": 5},
-
-    
-      {"source": "Mobile", "target": "Frontend", "value": 5},
-      {"source": "Mobile", "target": "Quality Analysis", "value": 5},
-
-     
-      {"source": "Frontend", "target": "Quality Analysis", "value": 5},
-
-     
-      {"source": "Product Management", "target": "UI", "value": 5},
-      {"source": "Product Management", "target": "UX", "value": 5},
-      {"source": "Product Management", "target": "BI", "value": 5},
-      {"source": "Product Management", "target": "Scrum Master", "value": 5},
-      {"source": "Product Management", "target": "Design", "value": 5},
-      {"source": "Product Management", "target": "Market Research", "value": 5},
-      {"source": "Product Management", "target": "Experiences", "value": 5},
-      {"source": "Product Management", "target": "DevOps", "value": 5},
-      {"source": "Product Management", "target": "Automation", "value": 5},
-
-     
-      {"source": "UI", "target": "UX", "value": 5},
-      {"source": "UI", "target": "BI", "value": 5},
-      {"source": "UI", "target": "Scrum Master", "value": 5},
-      {"source": "UI", "target": "Design", "value": 5},
-      {"source": "UI", "target": "Market Research", "value": 5},
-      {"source": "UI", "target": "Experiences", "value": 5},
-      {"source": "UI", "target": "DevOps", "value": 5},
-      {"source": "UI", "target": "Automation", "value": 5},
+        { "source": "Android", "target": "Software", "value": 5 },
+        { "source": "Android", "target": "IOS", "value": 5 },
+        { "source": "Android", "target": "Backend", "value": 5 },
+        { "source": "Android", "target": "Web", "value": 5 },
+        { "source": "Android", "target": "Robotics", "value": 5 },
+        { "source": "Android", "target": "Hardware", "value": 5 },
+        { "source": "Android", "target": "Software", "value": 5 },
+        { "source": "Android", "target": "Industrial", "value": 5 },
+        { "source": "Android", "target": "Mobile", "value": 5 },
+        { "source": "Android", "target": "Frontend", "value": 5 },
+        { "source": "Android", "target": "Quality Analysis", "value": 5 },
 
 
-      {"source": "UX", "target": "BI", "value": 5},
-      {"source": "UX", "target": "Scrum Master", "value": 5},
-      {"source": "UX", "target": "Design", "value": 5},
-      {"source": "UX", "target": "Market Research", "value": 5},
-      {"source": "UX", "target": "Experiences", "value": 5},
-      {"source": "UX", "target": "DevOps", "value": 5},
-      {"source": "UX", "target": "Automation", "value": 5},
-
-      
-      {"source": "BI", "target": "Scrum Master", "value": 5},
-      {"source": "BI", "target": "Design", "value": 5},
-      {"source": "BI", "target": "Market Research", "value": 5},
-      {"source": "BI", "target": "Experiences", "value": 5},
-      {"source": "BI", "target": "DevOps", "value": 5},
-      {"source": "BI", "target": "Automation", "value": 5},
-
-     
-      {"source": "Scrum Master", "target": "Design", "value": 5},
-      {"source": "Scrum Master", "target": "Market Research", "value": 5},
-      {"source": "Scrum Master", "target": "Experiences", "value": 5},
-      {"source": "Scrum Master", "target": "DevOps", "value": 5},
-      {"source": "Scrum Master", "target": "Automation", "value": 5},
-
-      
-      {"source": "Design", "target": "Market Research", "value": 5},
-      {"source": "Design", "target": "Experiences", "value": 5},
-      {"source": "Design", "target": "DevOps", "value": 5},
-      {"source": "Design", "target": "Automation", "value": 5},
-
-      
-      {"source": "Market Research", "target": "Experiences", "value": 5},
-      {"source": "Market Research", "target": "DevOps", "value": 5},
-      {"source": "Market Research", "target": "Automation", "value": 5},
-
-      
-      {"source": "Experiences", "target": "DevOps", "value": 5},
-      {"source": "Experiences", "target": "Automation", "value": 5},
-
-      
-      {"source": "DevOps", "target": "Automation", "value": 5},
-
-      
-      {"source": "Security", "target": "Penetration Tester", "value": 5},
-      {"source": "Security", "target": "Security Architect", "value": 5},
-      {"source": "Security", "target": "Reliability", "value": 5},
-      {"source": "Security", "target": "Data Engineer", "value": 5},
-      {"source": "Security", "target": "System Architect", "value": 5},
-      {"source": "Security", "target": "Network", "value": 5},
-      {"source": "Security", "target": "Engineer", "value": 5},
-      {"source": "Security", "target": "Cloud", "value": 5},
-
-      
-      {"source": "Penetration Tester", "target": "Security Architect", "value": 5},
-      {"source": "Penetration Tester", "target": "Reliability", "value": 5},
-      {"source": "Penetration Tester", "target": "Data Engineer", "value": 5},
-      {"source": "Penetration Tester", "target": "System Architect", "value": 5},
-      {"source": "Penetration Tester", "target": "Network", "value": 5},
-      {"source": "Penetration Tester", "target": "Engineer", "value": 5},
-      {"source": "Penetration Tester", "target": "Cloud", "value": 5},
-
-      
-      {"source": "Security Architect", "target": "Reliability", "value": 5},
-      {"source": "Security Architect", "target": "Data Engineer", "value": 5},
-      {"source": "Security Architect", "target": "System Architect", "value": 5},
-      {"source": "Security Architect", "target": "Network", "value": 5},
-      {"source": "Security Architect", "target": "Engineer", "value": 5},
-      {"source": "Security Architect", "target": "Cloud", "value": 5},
+        { "source": "IOS", "target": "Backend", "value": 5 },
+        { "source": "IOS", "target": "Web", "value": 5 },
+        { "source": "IOS", "target": "Robotics", "value": 5 },
+        { "source": "IOS", "target": "Hardware", "value": 5 },
+        { "source": "IOS", "target": "Software", "value": 5 },
+        { "source": "IOS", "target": "Industrial", "value": 5 },
+        { "source": "IOS", "target": "Mobile", "value": 5 },
+        { "source": "IOS", "target": "Frontend", "value": 5 },
+        { "source": "IOS", "target": "Quality Analysis", "value": 5 },
 
 
-      {"source": "Reliability", "target": "Data Engineer", "value": 5},
-      {"source": "Reliability", "target": "System Architect", "value": 5},
-      {"source": "Reliability", "target": "Network", "value": 5},
-      {"source": "Reliability", "target": "Engineer", "value": 5},
-      {"source": "Reliability", "target": "Cloud", "value": 5},
-
-      
-      {"source": "Data Engineer", "target": "System Architect", "value": 5},
-      {"source": "Data Engineer", "target": "Network", "value": 5},
-      {"source": "Data Engineer", "target": "Engineer", "value": 5},
-      {"source": "Data Engineer", "target": "Cloud", "value": 5},
-
-      
-      {"source": "System Architect", "target": "Network", "value": 5},
-      {"source": "System Architect", "target": "Engineer", "value": 5},
-      {"source": "System Architect", "target": "Cloud", "value": 5},
-
-      
-      {"source": "Network", "target": "Engineer", "value": 5},
-      {"source": "Network", "target": "Cloud", "value": 5},
-
-      
-      {"source": "Engineer", "target": "Cloud", "value": 5},
+        { "source": "Backend", "target": "Web", "value": 5 },
+        { "source": "Backend", "target": "Robotics", "value": 5 },
+        { "source": "Backend", "target": "Hardware", "value": 5 },
+        { "source": "Backend", "target": "Software", "value": 5 },
+        { "source": "Backend", "target": "Industrial", "value": 5 },
+        { "source": "Backend", "target": "Mobile", "value": 5 },
+        { "source": "Backend", "target": "Frontend", "value": 5 },
+        { "source": "Backend", "target": "Quality Analysis", "value": 5 },
 
 
-      {"source": "Marketing", "target": "CRM", "value": 5},
-      {"source": "Marketing", "target": "SEO", "value": 5},
-      {"source": "Marketing", "target": "SMO", "value": 5},
-      {"source": "Marketing", "target": "SEM", "value": 5},
-      {"source": "Marketing", "target": "PR", "value": 5},
-      {"source": "Marketing", "target": "Performance", "value": 5},
 
-      
-      {"source": "CRM", "target": "SEO", "value": 5},
-      {"source": "CRM", "target": "SMO", "value": 5},
-      {"source": "CRM", "target": "SEM", "value": 5},
-      {"source": "CRM", "target": "PR", "value": 5},
-      {"source": "CRM", "target": "Performance", "value": 5},
-
-      
-      {"source": "SEO", "target": "SMO", "value": 5},
-      {"source": "SEO", "target": "SEM", "value": 5},
-      {"source": "SEO", "target": "PR", "value": 5},
-      {"source": "SEO", "target": "Performance", "value": 5},
-
-      
-      {"source": "SMO", "target": "SEM", "value": 5},
-      {"source": "SMO", "target": "PR", "value": 5},
-      {"source": "SMO", "target": "Performance", "value": 5},
-
-      
-      {"source": "SEM", "target": "PR", "value": 5},
-      {"source": "SEM", "target": "Performance", "value": 5},
-
-      
-      {"source": "PR", "target": "Performance", "value": 5},
+        { "source": "Web", "target": "Robotics", "value": 5 },
+        { "source": "Web", "target": "Hardware", "value": 5 },
+        { "source": "Web", "target": "Software", "value": 5 },
+        { "source": "Web", "target": "Industrial", "value": 5 },
+        { "source": "Web", "target": "Mobile", "value": 5 },
+        { "source": "Web", "target": "Frontend", "value": 5 },
+        { "source": "Web", "target": "Quality Analysis", "value": 5 },
 
 
-      {"source": "Customer Service", "target": "Admin", "value": 5},
-      {"source": "Customer Service", "target": "HR", "value": 5},
-      {"source": "Customer Service", "target": "Sales", "value": 5},
-      {"source": "Customer Service", "target": "Accounting", "value": 5},
-      {"source": "Customer Service", "target": "Investors Relations", "value": 5},
-      {"source": "Customer Service", "target": "Finance", "value": 5},
-      {"source": "Customer Service", "target": "Operations", "value": 5},
-
-      
-      {"source": "Admin", "target": "HR", "value": 5},
-      {"source": "Admin", "target": "Sales", "value": 5},
-      {"source": "Admin", "target": "Accounting", "value": 5},
-      {"source": "Admin", "target": "Investors Relations", "value": 5},
-      {"source": "Admin", "target": "Finance", "value": 5},
-      {"source": "Admin", "target": "Operations", "value": 5},
-
-      
-      {"source": "HR", "target": "Sales", "value": 5},
-      {"source": "HR", "target": "Accounting", "value": 5},
-      {"source": "HR", "target": "Investors Relations", "value": 5},
-      {"source": "HR", "target": "Finance", "value": 5},
-      {"source": "HR", "target": "Operations", "value": 5},
-
-      
-      {"source": "Sales", "target": "Accounting", "value": 5},
-      {"source": "Sales", "target": "Investors Relations", "value": 5},
-      {"source": "Sales", "target": "Finance", "value": 5},
-      {"source": "Sales", "target": "Operations", "value": 5},
-
-      
-      {"source": "Accounting", "target": "Investors Relations", "value": 5},
-      {"source": "Accounting", "target": "Finance", "value": 5},
-      {"source": "Accounting", "target": "Operations", "value": 5},
-
-      
-      {"source": "Investors Relations", "target": "Finance", "value": 5},
-      {"source": "Investors Relations", "target": "Operations", "value": 5},
-
-      
-      {"source": "Finance", "target": "Operations", "value": 5},
-
-      {"source": "Engineering", "target": "Product Management", "value": 1},
-      {"source": "Engineering", "target": "Customer Service", "value": 5},
-      {"source": "Engineering", "target": "Experiences", "value": 5},
-      {"source": "Engineering", "target": "Automation", "value": 5},
-
-      {"source": "Quality Analysis", "target": "Penetration Tester", "value": 1},
-
-      {"source": "Software", "target": "Penetration Tester", "value": 1},
-
-      {"source": "Industrial", "target": "Experiences", "value": 1},
-
-      {"source": "Penetration Tester", "target": "DevOps", "value": 1},
-
-      {"source": "Software", "target": "Penetration Tester", "value": 1},
-
-      {"source": "Security", "target": "DevOps", "value": 1},
-      {"source": "Security", "target": "BI", "value": 1},
-      {"source": "System Architect", "target": "Experiences", "value": 5},
-
-      {"source": "Marketing", "target": "Product Management", "value": 1},
-
-      {"source": "PR", "target": "Penetration Tester", "value": 5},
-      {"source": "PR", "target": "UX", "value": 5},
-      {"source": "PR", "target": "Performance", "value": 5},
-      {"source": "PR", "target": "Customer Service", "value": 5},
+        { "source": "Robotics", "target": "Hardware", "value": 5 },
+        { "source": "Robotics", "target": "Software", "value": 5 },
+        { "source": "Robotics", "target": "Industrial", "value": 5 },
+        { "source": "Robotics", "target": "Mobile", "value": 5 },
+        { "source": "Robotics", "target": "Frontend", "value": 5 },
+        { "source": "Robotics", "target": "Quality Analysis", "value": 5 },
 
 
-      {"source": "Customer Service", "target": "Penetration Tester", "value": 5},
-      {"source": "Customer Service", "target": "Product Management", "value": 1},
-      {"source": "Customer Service", "target": "Penetration Tester", "value": 5},
-      {"source": "Customer Service", "target": "UX", "value": 5},
-      {"source": "Customer Service", "target": "Design", "value": 5},
+        { "source": "Hardware", "target": "Software", "value": 5 },
+        { "source": "Hardware", "target": "Industrial", "value": 5 },
+        { "source": "Hardware", "target": "Mobile", "value": 5 },
+        { "source": "Hardware", "target": "Frontend", "value": 5 },
+        { "source": "Hardware", "target": "Quality Analysis", "value": 5 },
 
-      {"source": "Performance", "target": "Product Management", "value": 5}
+
+        { "source": "Software", "target": "Industrial", "value": 5 },
+        { "source": "Software", "target": "Mobile", "value": 5 },
+        { "source": "Software", "target": "Frontend", "value": 5 },
+        { "source": "Software", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Software", "target": "Mobile", "value": 5 },
+        { "source": "Software", "target": "Frontend", "value": 5 },
+        { "source": "Software", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Mobile", "target": "Frontend", "value": 5 },
+        { "source": "Mobile", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Frontend", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Product Management", "target": "UI", "value": 5 },
+        { "source": "Product Management", "target": "UX", "value": 5 },
+        { "source": "Product Management", "target": "BI", "value": 5 },
+        { "source": "Product Management", "target": "Scrum Master", "value": 5 },
+        { "source": "Product Management", "target": "Design", "value": 5 },
+        { "source": "Product Management", "target": "Market Research", "value": 5 },
+        { "source": "Product Management", "target": "Experiences", "value": 5 },
+        { "source": "Product Management", "target": "DevOps", "value": 5 },
+        { "source": "Product Management", "target": "Automation", "value": 5 },
+
+
+        { "source": "UI", "target": "UX", "value": 5 },
+        { "source": "UI", "target": "BI", "value": 5 },
+        { "source": "UI", "target": "Scrum Master", "value": 5 },
+        { "source": "UI", "target": "Design", "value": 5 },
+        { "source": "UI", "target": "Market Research", "value": 5 },
+        { "source": "UI", "target": "Experiences", "value": 5 },
+        { "source": "UI", "target": "DevOps", "value": 5 },
+        { "source": "UI", "target": "Automation", "value": 5 },
+
+
+        { "source": "UX", "target": "BI", "value": 5 },
+        { "source": "UX", "target": "Scrum Master", "value": 5 },
+        { "source": "UX", "target": "Design", "value": 5 },
+        { "source": "UX", "target": "Market Research", "value": 5 },
+        { "source": "UX", "target": "Experiences", "value": 5 },
+        { "source": "UX", "target": "DevOps", "value": 5 },
+        { "source": "UX", "target": "Automation", "value": 5 },
+
+
+        { "source": "BI", "target": "Scrum Master", "value": 5 },
+        { "source": "BI", "target": "Design", "value": 5 },
+        { "source": "BI", "target": "Market Research", "value": 5 },
+        { "source": "BI", "target": "Experiences", "value": 5 },
+        { "source": "BI", "target": "DevOps", "value": 5 },
+        { "source": "BI", "target": "Automation", "value": 5 },
+
+
+        { "source": "Scrum Master", "target": "Design", "value": 5 },
+        { "source": "Scrum Master", "target": "Market Research", "value": 5 },
+        { "source": "Scrum Master", "target": "Experiences", "value": 5 },
+        { "source": "Scrum Master", "target": "DevOps", "value": 5 },
+        { "source": "Scrum Master", "target": "Automation", "value": 5 },
+
+
+        { "source": "Design", "target": "Market Research", "value": 5 },
+        { "source": "Design", "target": "Experiences", "value": 5 },
+        { "source": "Design", "target": "DevOps", "value": 5 },
+        { "source": "Design", "target": "Automation", "value": 5 },
+
+
+        { "source": "Market Research", "target": "Experiences", "value": 5 },
+        { "source": "Market Research", "target": "DevOps", "value": 5 },
+        { "source": "Market Research", "target": "Automation", "value": 5 },
+
+
+        { "source": "Experiences", "target": "DevOps", "value": 5 },
+        { "source": "Experiences", "target": "Automation", "value": 5 },
+
+
+        { "source": "DevOps", "target": "Automation", "value": 5 },
+
+
+        { "source": "Security", "target": "Penetration Tester", "value": 5 },
+        { "source": "Security", "target": "Security Architect", "value": 5 },
+        { "source": "Security", "target": "Reliability", "value": 5 },
+        { "source": "Security", "target": "Data Engineer", "value": 5 },
+        { "source": "Security", "target": "System Architect", "value": 5 },
+        { "source": "Security", "target": "Network", "value": 5 },
+        { "source": "Security", "target": "Engineer", "value": 5 },
+        { "source": "Security", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Penetration Tester", "target": "Security Architect", "value": 5 },
+        { "source": "Penetration Tester", "target": "Reliability", "value": 5 },
+        { "source": "Penetration Tester", "target": "Data Engineer", "value": 5 },
+        { "source": "Penetration Tester", "target": "System Architect", "value": 5 },
+        { "source": "Penetration Tester", "target": "Network", "value": 5 },
+        { "source": "Penetration Tester", "target": "Engineer", "value": 5 },
+        { "source": "Penetration Tester", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Security Architect", "target": "Reliability", "value": 5 },
+        { "source": "Security Architect", "target": "Data Engineer", "value": 5 },
+        { "source": "Security Architect", "target": "System Architect", "value": 5 },
+        { "source": "Security Architect", "target": "Network", "value": 5 },
+        { "source": "Security Architect", "target": "Engineer", "value": 5 },
+        { "source": "Security Architect", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Reliability", "target": "Data Engineer", "value": 5 },
+        { "source": "Reliability", "target": "System Architect", "value": 5 },
+        { "source": "Reliability", "target": "Network", "value": 5 },
+        { "source": "Reliability", "target": "Engineer", "value": 5 },
+        { "source": "Reliability", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Data Engineer", "target": "System Architect", "value": 5 },
+        { "source": "Data Engineer", "target": "Network", "value": 5 },
+        { "source": "Data Engineer", "target": "Engineer", "value": 5 },
+        { "source": "Data Engineer", "target": "Cloud", "value": 5 },
+
+
+        { "source": "System Architect", "target": "Network", "value": 5 },
+        { "source": "System Architect", "target": "Engineer", "value": 5 },
+        { "source": "System Architect", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Network", "target": "Engineer", "value": 5 },
+        { "source": "Network", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Engineer", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Marketing", "target": "CRM", "value": 5 },
+        { "source": "Marketing", "target": "SEO", "value": 5 },
+        { "source": "Marketing", "target": "SMO", "value": 5 },
+        { "source": "Marketing", "target": "SEM", "value": 5 },
+        { "source": "Marketing", "target": "PR", "value": 5 },
+        { "source": "Marketing", "target": "Performance", "value": 5 },
+
+
+        { "source": "CRM", "target": "SEO", "value": 5 },
+        { "source": "CRM", "target": "SMO", "value": 5 },
+        { "source": "CRM", "target": "SEM", "value": 5 },
+        { "source": "CRM", "target": "PR", "value": 5 },
+        { "source": "CRM", "target": "Performance", "value": 5 },
+
+
+        { "source": "SEO", "target": "SMO", "value": 5 },
+        { "source": "SEO", "target": "SEM", "value": 5 },
+        { "source": "SEO", "target": "PR", "value": 5 },
+        { "source": "SEO", "target": "Performance", "value": 5 },
+
+
+        { "source": "SMO", "target": "SEM", "value": 5 },
+        { "source": "SMO", "target": "PR", "value": 5 },
+        { "source": "SMO", "target": "Performance", "value": 5 },
+
+
+        { "source": "SEM", "target": "PR", "value": 5 },
+        { "source": "SEM", "target": "Performance", "value": 5 },
+
+
+        { "source": "PR", "target": "Performance", "value": 5 },
+
+
+        { "source": "Customer Service", "target": "Admin", "value": 5 },
+        { "source": "Customer Service", "target": "HR", "value": 5 },
+        { "source": "Customer Service", "target": "Sales", "value": 5 },
+        { "source": "Customer Service", "target": "Accounting", "value": 5 },
+        { "source": "Customer Service", "target": "Investors Relations", "value": 5 },
+        { "source": "Customer Service", "target": "Finance", "value": 5 },
+        { "source": "Customer Service", "target": "Operations", "value": 5 },
+
+
+        { "source": "Admin", "target": "HR", "value": 5 },
+        { "source": "Admin", "target": "Sales", "value": 5 },
+        { "source": "Admin", "target": "Accounting", "value": 5 },
+        { "source": "Admin", "target": "Investors Relations", "value": 5 },
+        { "source": "Admin", "target": "Finance", "value": 5 },
+        { "source": "Admin", "target": "Operations", "value": 5 },
+
+
+        { "source": "HR", "target": "Sales", "value": 5 },
+        { "source": "HR", "target": "Accounting", "value": 5 },
+        { "source": "HR", "target": "Investors Relations", "value": 5 },
+        { "source": "HR", "target": "Finance", "value": 5 },
+        { "source": "HR", "target": "Operations", "value": 5 },
+
+
+        { "source": "Sales", "target": "Accounting", "value": 5 },
+        { "source": "Sales", "target": "Investors Relations", "value": 5 },
+        { "source": "Sales", "target": "Finance", "value": 5 },
+        { "source": "Sales", "target": "Operations", "value": 5 },
+
+
+        { "source": "Accounting", "target": "Investors Relations", "value": 5 },
+        { "source": "Accounting", "target": "Finance", "value": 5 },
+        { "source": "Accounting", "target": "Operations", "value": 5 },
+
+
+        { "source": "Investors Relations", "target": "Finance", "value": 5 },
+        { "source": "Investors Relations", "target": "Operations", "value": 5 },
+
+
+        { "source": "Finance", "target": "Operations", "value": 5 },
+
+        { "source": "Engineering", "target": "Product Management", "value": 5 },
+        { "source": "Engineering", "target": "Customer Service", "value": 5 },
+        { "source": "Engineering", "target": "Experiences", "value": 5 },
+        { "source": "Engineering", "target": "Automation", "value": 5 },
+
+        { "source": "Quality Analysis", "target": "Penetration Tester", "value": 5 },
+
+        { "source": "Software", "target": "Penetration Tester", "value": 5 },
+
+        { "source": "Industrial", "target": "Experiences", "value": 5 },
+
+        { "source": "Penetration Tester", "target": "DevOps", "value": 5 },
+
+        { "source": "Software", "target": "Penetration Tester", "value": 5 },
+
+        { "source": "Security", "target": "DevOps", "value": 5 },
+        { "source": "Security", "target": "BI", "value": 5 },
+        { "source": "System Architect", "target": "Experiences", "value": 5 },
+
+        { "source": "Marketing", "target": "Product Management", "value": 5 },
+
+        { "source": "PR", "target": "Penetration Tester", "value": 5 },
+        { "source": "PR", "target": "UX", "value": 5 },
+        { "source": "PR", "target": "Performance", "value": 5 },
+        { "source": "PR", "target": "Customer Service", "value": 5 },
+
+
+        { "source": "Customer Service", "target": "Penetration Tester", "value": 5 },
+        { "source": "Customer Service", "target": "Product Management", "value": 5 },
+        { "source": "Customer Service", "target": "Penetration Tester", "value": 5 },
+        { "source": "Customer Service", "target": "UX", "value": 5 },
+        { "source": "Customer Service", "target": "Design", "value": 5 },
+
+        { "source": "Web", "target": "Robotics", "value": 5 },
+        { "source": "Web", "target": "Hardware", "value": 5 },
+        { "source": "Web", "target": "Software", "value": 5 },
+        { "source": "Web", "target": "Industrial", "value": 5 },
+        { "source": "Web", "target": "Mobile", "value": 5 },
+        { "source": "Web", "target": "Frontend", "value": 5 },
+        { "source": "Web", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Robotics", "target": "Hardware", "value": 5 },
+        { "source": "Robotics", "target": "Software", "value": 5 },
+        { "source": "Robotics", "target": "Industrial", "value": 5 },
+        { "source": "Robotics", "target": "Mobile", "value": 5 },
+        { "source": "Robotics", "target": "Frontend", "value": 5 },
+        { "source": "Robotics", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Hardware", "target": "Software", "value": 5 },
+        { "source": "Hardware", "target": "Industrial", "value": 5 },
+        { "source": "Hardware", "target": "Mobile", "value": 5 },
+        { "source": "Hardware", "target": "Frontend", "value": 5 },
+        { "source": "Hardware", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Software", "target": "Industrial", "value": 5 },
+        { "source": "Software", "target": "Mobile", "value": 5 },
+        { "source": "Software", "target": "Frontend", "value": 5 },
+        { "source": "Software", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Software", "target": "Mobile", "value": 5 },
+        { "source": "Software", "target": "Frontend", "value": 5 },
+        { "source": "Software", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Mobile", "target": "Frontend", "value": 5 },
+        { "source": "Mobile", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Frontend", "target": "Quality Analysis", "value": 5 },
+
+
+        { "source": "Product Management", "target": "UI", "value": 5 },
+        { "source": "Product Management", "target": "UX", "value": 5 },
+        { "source": "Product Management", "target": "BI", "value": 5 },
+        { "source": "Product Management", "target": "Scrum Master", "value": 5 },
+        { "source": "Product Management", "target": "Design", "value": 5 },
+        { "source": "Product Management", "target": "Market Research", "value": 5 },
+        { "source": "Product Management", "target": "Experiences", "value": 5 },
+        { "source": "Product Management", "target": "DevOps", "value": 5 },
+        { "source": "Product Management", "target": "Automation", "value": 5 },
+
+
+        { "source": "UI", "target": "UX", "value": 5 },
+        { "source": "UI", "target": "BI", "value": 5 },
+        { "source": "UI", "target": "Scrum Master", "value": 5 },
+        { "source": "UI", "target": "Design", "value": 5 },
+        { "source": "UI", "target": "Market Research", "value": 5 },
+        { "source": "UI", "target": "Experiences", "value": 5 },
+        { "source": "UI", "target": "DevOps", "value": 5 },
+        { "source": "UI", "target": "Automation", "value": 5 },
+
+
+        { "source": "UX", "target": "BI", "value": 5 },
+        { "source": "UX", "target": "Scrum Master", "value": 5 },
+        { "source": "UX", "target": "Design", "value": 5 },
+        { "source": "UX", "target": "Market Research", "value": 5 },
+        { "source": "UX", "target": "Experiences", "value": 5 },
+        { "source": "UX", "target": "DevOps", "value": 5 },
+        { "source": "UX", "target": "Automation", "value": 5 },
+
+
+        { "source": "BI", "target": "Scrum Master", "value": 5 },
+        { "source": "BI", "target": "Design", "value": 5 },
+        { "source": "BI", "target": "Market Research", "value": 5 },
+        { "source": "BI", "target": "Experiences", "value": 5 },
+        { "source": "BI", "target": "DevOps", "value": 5 },
+        { "source": "BI", "target": "Automation", "value": 5 },
+
+
+        { "source": "Scrum Master", "target": "Design", "value": 5 },
+        { "source": "Scrum Master", "target": "Market Research", "value": 5 },
+        { "source": "Scrum Master", "target": "Experiences", "value": 5 },
+        { "source": "Scrum Master", "target": "DevOps", "value": 5 },
+        { "source": "Scrum Master", "target": "Automation", "value": 5 },
+
+
+        { "source": "Design", "target": "Market Research", "value": 5 },
+        { "source": "Design", "target": "Experiences", "value": 5 },
+        { "source": "Design", "target": "DevOps", "value": 5 },
+        { "source": "Design", "target": "Automation", "value": 5 },
+
+
+        { "source": "Market Research", "target": "Experiences", "value": 5 },
+        { "source": "Market Research", "target": "DevOps", "value": 5 },
+        { "source": "Market Research", "target": "Automation", "value": 5 },
+
+
+        { "source": "Experiences", "target": "DevOps", "value": 5 },
+        { "source": "Experiences", "target": "Automation", "value": 5 },
+
+
+        { "source": "DevOps", "target": "Automation", "value": 5 },
+
+
+        { "source": "Security", "target": "Penetration Tester", "value": 5 },
+        { "source": "Security", "target": "Security Architect", "value": 5 },
+        { "source": "Security", "target": "Reliability", "value": 5 },
+        { "source": "Security", "target": "Data Engineer", "value": 5 },
+        { "source": "Security", "target": "System Architect", "value": 5 },
+        { "source": "Security", "target": "Network", "value": 5 },
+        { "source": "Security", "target": "Engineer", "value": 5 },
+        { "source": "Security", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Penetration Tester", "target": "Security Architect", "value": 5 },
+        { "source": "Penetration Tester", "target": "Reliability", "value": 5 },
+        { "source": "Penetration Tester", "target": "Data Engineer", "value": 5 },
+        { "source": "Penetration Tester", "target": "System Architect", "value": 5 },
+        { "source": "Penetration Tester", "target": "Network", "value": 5 },
+        { "source": "Penetration Tester", "target": "Engineer", "value": 5 },
+        { "source": "Penetration Tester", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Security Architect", "target": "Reliability", "value": 5 },
+        { "source": "Security Architect", "target": "Data Engineer", "value": 5 },
+        { "source": "Security Architect", "target": "System Architect", "value": 5 },
+        { "source": "Security Architect", "target": "Network", "value": 5 },
+        { "source": "Security Architect", "target": "Engineer", "value": 5 },
+        { "source": "Security Architect", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Reliability", "target": "Data Engineer", "value": 5 },
+        { "source": "Reliability", "target": "System Architect", "value": 5 },
+        { "source": "Reliability", "target": "Network", "value": 5 },
+        { "source": "Reliability", "target": "Engineer", "value": 5 },
+        { "source": "Reliability", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Data Engineer", "target": "System Architect", "value": 5 },
+        { "source": "Data Engineer", "target": "Network", "value": 5 },
+        { "source": "Data Engineer", "target": "Engineer", "value": 5 },
+        { "source": "Data Engineer", "target": "Cloud", "value": 5 },
+
+
+        { "source": "System Architect", "target": "Network", "value": 5 },
+        { "source": "System Architect", "target": "Engineer", "value": 5 },
+        { "source": "System Architect", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Network", "target": "Engineer", "value": 5 },
+        { "source": "Network", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Engineer", "target": "Cloud", "value": 5 },
+
+
+        { "source": "Marketing", "target": "CRM", "value": 5 },
+        { "source": "Marketing", "target": "SEO", "value": 5 },
+        { "source": "Marketing", "target": "SMO", "value": 5 },
+        { "source": "Marketing", "target": "SEM", "value": 5 },
+        { "source": "Marketing", "target": "PR", "value": 5 },
+        { "source": "Marketing", "target": "Performance", "value": 5 },
+
+
+        { "source": "CRM", "target": "SEO", "value": 5 },
+        { "source": "CRM", "target": "SMO", "value": 5 },
+        { "source": "CRM", "target": "SEM", "value": 5 },
+        { "source": "CRM", "target": "PR", "value": 5 },
+        { "source": "CRM", "target": "Performance", "value": 5 },
+
+
+        { "source": "SEO", "target": "SMO", "value": 5 },
+        { "source": "SEO", "target": "SEM", "value": 5 },
+        { "source": "SEO", "target": "PR", "value": 5 },
+        { "source": "SEO", "target": "Performance", "value": 5 },
+
+
+        { "source": "SMO", "target": "SEM", "value": 5 },
+        { "source": "SMO", "target": "PR", "value": 5 },
+        { "source": "SMO", "target": "Performance", "value": 5 },
+
+
+        { "source": "SEM", "target": "PR", "value": 5 },
+        { "source": "SEM", "target": "Performance", "value": 5 },
+
+
+        { "source": "PR", "target": "Performance", "value": 5 },
+
+
+        { "source": "Customer Service", "target": "Admin", "value": 5 },
+        { "source": "Customer Service", "target": "HR", "value": 5 },
+        { "source": "Customer Service", "target": "Sales", "value": 5 },
+        { "source": "Customer Service", "target": "Accounting", "value": 5 },
+        { "source": "Customer Service", "target": "Investors Relations", "value": 5 },
+        { "source": "Customer Service", "target": "Finance", "value": 5 },
+        { "source": "Customer Service", "target": "Operations", "value": 5 },
+
+
+        { "source": "Admin", "target": "HR", "value": 5 },
+        { "source": "Admin", "target": "Sales", "value": 5 },
+        { "source": "Admin", "target": "Accounting", "value": 5 },
+        { "source": "Admin", "target": "Investors Relations", "value": 5 },
+        { "source": "Admin", "target": "Finance", "value": 5 },
+        { "source": "Admin", "target": "Operations", "value": 5 },
+
+
+        { "source": "HR", "target": "Sales", "value": 5 },
+        { "source": "HR", "target": "Accounting", "value": 5 },
+        { "source": "HR", "target": "Investors Relations", "value": 5 },
+        { "source": "HR", "target": "Finance", "value": 5 },
+        { "source": "HR", "target": "Operations", "value": 5 },
+
+
+        { "source": "Sales", "target": "Accounting", "value": 5 },
+        { "source": "Sales", "target": "Investors Relations", "value": 5 },
+        { "source": "Sales", "target": "Finance", "value": 5 },
+        { "source": "Sales", "target": "Operations", "value": 5 },
+
+
+        { "source": "Accounting", "target": "Investors Relations", "value": 5 },
+        { "source": "Accounting", "target": "Finance", "value": 5 },
+        { "source": "Accounting", "target": "Operations", "value": 5 },
+
+
+        { "source": "Investors Relations", "target": "Finance", "value": 5 },
+        { "source": "Investors Relations", "target": "Operations", "value": 5 },
+
+
+        { "source": "Finance", "target": "Operations", "value": 5 },
+
+        { "source": "Engineering", "target": "Product Management", "value": 1 },
+        { "source": "Engineering", "target": "Customer Service", "value": 5 },
+        { "source": "Engineering", "target": "Experiences", "value": 5 },
+        { "source": "Engineering", "target": "Automation", "value": 5 },
+
+        { "source": "Quality Analysis", "target": "Penetration Tester", "value": 1 },
+
+        { "source": "Software", "target": "Penetration Tester", "value": 1 },
+
+        { "source": "Industrial", "target": "Experiences", "value": 1 },
+
+        { "source": "Penetration Tester", "target": "DevOps", "value": 1 },
+
+        { "source": "Software", "target": "Penetration Tester", "value": 1 },
+
+        { "source": "Security", "target": "DevOps", "value": 1 },
+        { "source": "Security", "target": "BI", "value": 1 },
+        { "source": "System Architect", "target": "Experiences", "value": 5 },
+
+        { "source": "Marketing", "target": "Product Management", "value": 1 },
+
+        { "source": "PR", "target": "Penetration Tester", "value": 5 },
+        { "source": "PR", "target": "UX", "value": 5 },
+        { "source": "PR", "target": "Performance", "value": 5 },
+        { "source": "PR", "target": "Customer Service", "value": 5 },
+
+
+        { "source": "Customer Service", "target": "Penetration Tester", "value": 5 },
+        { "source": "Customer Service", "target": "Product Management", "value": 1 },
+        { "source": "Customer Service", "target": "Penetration Tester", "value": 5 },
+        { "source": "Customer Service", "target": "UX", "value": 5 },
+        { "source": "Customer Service", "target": "Design", "value": 5 },
+
+        { "source": "Performance", "target": "Product Management", "value": 5 }
     ]
-  }
-  
+}

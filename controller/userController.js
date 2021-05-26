@@ -6,8 +6,6 @@ const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
 
 router.get("/login", (req, res) => res.render("login"));
-
-router.get("/login", (req, res) => res.render("login"));
 router.get("/register", (req, res) => res.render("register"));
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../model/user");
+const Job = require("../model/job");
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
@@ -79,6 +80,22 @@ router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success_msg", "You are logged out");
   res.redirect("/users/login");
+});
+
+router.post("/testone", (req, res) => {
+  const { name, description, image } = req.body;
+  const newJob = new Job({
+    name,
+    description,
+    image,
+  });
+  newJob
+      .save()
+      .then((user) => {
+        res.redirect('/jobs');
+      })
+      .catch((err) => console.log(err));
+
 });
 
 module.exports = router;

@@ -171,7 +171,7 @@ This is a button
             font-size: 44px;
             color: #28c49e;
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
         }
         
         .monitor {
@@ -191,4 +191,13 @@ This is a button
             font-size: 16px;
             color: #ffffff;
             line-height: 35px;
+        }
+        /* ---------------- Dashboard ----------------*/
+        
+        .welcome {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 21px;
+            color: #28c49e;
+            text-align: center;
         }

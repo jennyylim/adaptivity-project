@@ -92,7 +92,7 @@ router.post("/testone", (req, res) => {
   newJob
       .save()
       .then((job) => {
-        res.redirect('/jobs');
+        res.redirect('/job');
       })
       .catch((err) => console.log(err));
 

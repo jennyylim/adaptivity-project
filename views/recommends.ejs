@@ -4,20 +4,25 @@
 <%- include('./partials/head.ejs')%>
 
     <body>
-        <h2 class="h2 index">AI Recommends</h2>
-        <% if (jobs.length> 0) {%>
-            <% jobs.forEach(job=> { %>
-                <h2 class="h1 index">
-                    <%= job.name %>
-                </h2>
-                <p class="dummy-text" style="text-align: center;">
-                    <%= job.description %>
-                </p>
+        <%- include('./partials/navbar.ejs')%>
 
-                <% }) %>
-                    <% } else { %>
-                        <p>Find another job</p>
-                        <% } %>
+            <h2 class="h2 index">AI Recommends</h2>
+            <% if (jobs.length> 0) {%>
+                <% jobs.forEach(job=> { %>
+                    <h2 class="h1 index">
+                        <%= job.name %>
+                    </h2>
+                    <p class="dummy-text" style="text-align: center;">
+                        <%= job.description %>
+                    </p>
+
+                    <% }) %>
+                        <% } else { %>
+                            <p>Find another job</p>
+                            <% } %>
+
+                                <%- include('./partials/footer.ejs')%>
+
     </body>
 
 </html>

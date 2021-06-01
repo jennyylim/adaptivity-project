@@ -7,10 +7,23 @@ const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
 
 router.get("/login", (req, res) => res.render("login"));
+
 router.get("/register", (req, res) => res.render("register"));
+
+router.get("/recommends", (req, res) => {
+  Job.find()
+    .then((result) => {
+      res.render("recommends", { jobs: result });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.get("/assessment", ensureAuthenticated, (req, res) =>
   res.render("assessment")
 );
+
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {
     name: req.user.name,
@@ -90,12 +103,11 @@ router.post("/testone", (req, res) => {
     image,
   });
   newJob
-      .save()
-      .then((job) => {
-        res.redirect('/job');
-      })
-      .catch((err) => console.log(err));
-
+    .save()
+    .then((job) => {
+      res.redirect("/job");
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;

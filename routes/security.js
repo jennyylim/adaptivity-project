@@ -7,4 +7,8 @@ router.get("/error", (req, res) => res.render("404"));
 
 router.get("/job", (req, res) => res.render("job"));
 
+
+//check the page render. if wrong, kindly change
+router.get('/andrew', (req,res)=> res.render('loginpage+'));
+
 module.exports = router;

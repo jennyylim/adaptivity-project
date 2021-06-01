@@ -213,3 +213,40 @@ a.nav-links:hover {
     color: #28c49e;
     text-align: center;
 }
+
+.col-6.col-md.footer {
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 30px;
+}
+
+.footer.address1 {
+    margin-bottom: 45px;
+}
+
+.link-secondary {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.h4.footer {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 21px;
+    color: #28c49e;
+    padding-bottom: 15px;
+}
+
+.h4.footer2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 21px;
+    color: #28c49e;
+    padding: 15px 0;
+}

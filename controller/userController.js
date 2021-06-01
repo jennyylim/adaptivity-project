@@ -1,15 +1,30 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../model/user");
+const Job = require("../model/job");
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
 
 router.get("/login", (req, res) => res.render("login"));
+
 router.get("/register", (req, res) => res.render("register"));
+
+router.get("/recommends", (req, res) => {
+  Job.find()
+    .then((result) => {
+      result = result.sort(() => Math.random() - 0.5);
+      res.render("recommends", { jobs: result });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.get("/assessment", ensureAuthenticated, (req, res) =>
   res.render("assessment")
 );
+
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {
     name: req.user.name,
@@ -79,6 +94,21 @@ router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success_msg", "You are logged out");
   res.redirect("/users/login");
+});
+
+router.post("/testone", (req, res) => {
+  const { name, description, image } = req.body;
+  const newJob = new Job({
+    name,
+    description,
+    image,
+  });
+  newJob
+    .save()
+    .then((job) => {
+      res.redirect("/job");
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;

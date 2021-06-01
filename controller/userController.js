@@ -13,6 +13,7 @@ router.get("/register", (req, res) => res.render("register"));
 router.get("/recommends", (req, res) => {
   Job.find()
     .then((result) => {
+      result = result.sort(() => Math.random() - 0.5);
       res.render("recommends", { jobs: result });
     })
     .catch((err) => {

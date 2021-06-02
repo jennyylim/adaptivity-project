@@ -250,3 +250,31 @@ a.nav-links:hover {
     color: #28c49e;
     padding: 15px 0;
 }
+
+.copyright.footer {
+    padding-top: 100px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.privacy {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.privacy {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.2s all linear;
+    -webkit-transition: 0.2s all linear;
+    -moz-transition: 0.2s all linear;
+    -ms-transition: 0.2s all linear;
+    -o-transition: 0.2s all linear;
+}
+
+.privacy:hover {
+    color: #28c49e;
+}

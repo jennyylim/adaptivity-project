@@ -7,10 +7,24 @@ const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
 
 router.get("/login", (req, res) => res.render("login"));
+
 router.get("/register", (req, res) => res.render("register"));
+
+router.get("/recommends", ensureAuthenticated, (req, res) => {
+  Job.find()
+    .then((result) => {
+      result = result.sort(() => Math.random() - 0.5);
+      res.render("recommends", { jobs: result });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 router.get("/assessment", ensureAuthenticated, (req, res) =>
   res.render("assessment")
 );
+
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
   res.render("dashboard", {
     name: req.user.name,
@@ -82,20 +96,25 @@ router.get("/logout", (req, res) => {
   res.redirect("/users/login");
 });
 
+//Job pages
+router.get("/product-manager", ensureAuthenticated, (req, res) => {
+  res.render("product-manager");
+});
+
 router.post("/testone", (req, res) => {
-  const { name, description, image } = req.body;
+  const { name, description, image, link } = req.body;
   const newJob = new Job({
     name,
     description,
     image,
+    link,
   });
   newJob
-      .save()
-      .then((job) => {
-        res.redirect('/job');
-      })
-      .catch((err) => console.log(err));
-
+    .save()
+    .then((job) => {
+      res.redirect("/job");
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;

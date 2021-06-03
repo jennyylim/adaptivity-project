@@ -281,3 +281,7 @@ a.nav-links:hover {
 .privacy:hover {
     color: #28c49e;
 }
+
+.container.py-5 {
+    background-color: #000000;
+}

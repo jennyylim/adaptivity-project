@@ -66,6 +66,10 @@ app.use('/', require('./routes/security'));
 
 app.use('/users', require('./controller/userController'));
 
+app.get('/graph', (req,res) => res.render("forcegraph"));
+
+app.get('/data', (req,res) => res.sendFile(__dirname + '/adaptivity.json'));
+
 //localhost:4000/testone
 
 // app.post('/testone', (req, res) => {

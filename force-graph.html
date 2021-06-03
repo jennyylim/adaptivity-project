@@ -2,18 +2,19 @@
 <meta charset="utf-8">
 <style>
     .links line {
-        stroke: #999;
+        stroke: #fff;
         stroke-opacity: 0.6;
     }
-
+    
     .nodes circle {
         stroke: #fff;
         stroke-width: 1.5px;
     }
-
+    
     text {
         font-family: sans-serif;
-        font-size: 10px;
+        font-size: 15px;
+        stroke: #fff;
     }
     
     svg {
@@ -23,16 +24,20 @@
     }
     
     .force-graph {
+        color: #fff;
         font-family: sans-serif;
         font-size: 62px;
         text-align: center;
     }
+    
+    body {
+        background-color: #000;
+    }
 </style>
 <h1 class="force-graph">Explore with your digital compass</h1>
-<svg width="1000" height="500"></svg>
+<svg width="1000" height="1000"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
-
     var svg = d3.select("svg"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
@@ -40,13 +45,13 @@
     var color = d3.scaleOrdinal(d3.schemeCategory10);
 
     var simulation = d3.forceSimulation()
-        .force("link", d3.forceLink().id(function (d) {
+        .force("link", d3.forceLink().id(function(d) {
             return d.id;
-        }).distance(80).strength(1))
+        }).distance(150).strength(1))
         .force("charge", d3.forceManyBody())
         .force("center", d3.forceCenter(width / 2, height / 2))
 
-    d3.json("data", function (error, graph) {
+    d3.json("data", function(error, graph) {
 
         if (error) throw error;
 
@@ -55,7 +60,7 @@
             .selectAll("line")
             .data(graph.links)
             .enter().append("line")
-            .attr("stroke-width", function (d) {
+            .attr("stroke-width", function(d) {
                 return Math.sqrt(d.value);
             });
 
@@ -67,11 +72,11 @@
 
         var circles = node.append("circle")
             // .attr("r", 5)
-            .attr("r", function (d) {
+            .attr("r", function(d) {
                 var minRadius = 10;
                 return minRadius + (d.value / 5);
             })
-            .attr("fill", function (d) {
+            .attr("fill", function(d) {
                 return color(d.group);
             })
             .call(d3.drag()
@@ -80,14 +85,14 @@
                 .on("end", dragended));
 
         var labels = node.append("text")
-            .text(function (d) {
+            .text(function(d) {
                 return d.id;
             })
-            .attr('x', 10)
+            .attr('x', 25)
             .attr('y', 5);
 
         node.append("title")
-            .text(function (d) {
+            .text(function(d) {
                 return d.id;
             });
 
@@ -100,21 +105,21 @@
 
         function ticked() {
             link
-                .attr("x1", function (d) {
+                .attr("x1", function(d) {
                     return d.source.x;
                 })
-                .attr("y1", function (d) {
+                .attr("y1", function(d) {
                     return d.source.y;
                 })
-                .attr("x2", function (d) {
+                .attr("x2", function(d) {
                     return d.target.x;
                 })
-                .attr("y2", function (d) {
+                .attr("y2", function(d) {
                     return d.target.y;
                 });
 
             node
-                .attr("transform", function (d) {
+                .attr("transform", function(d) {
                     return "translate(" + d.x + "," + d.y + ")";
                 })
         }

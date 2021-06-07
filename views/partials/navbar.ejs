@@ -18,8 +18,11 @@
                 <li class="nav-list">
                     <a class="nav-links" href="https://adaptivity.us/aboutus/">ABOUT ADAPTABILITY</a>
                 </li>
-                <li class="nav-list"><a class="cta_button sign-in" href="/users/login">
-            LOG IN</a>
+                <% if(!isLoggedIn){ %>
+                    <li class="nav-item nav-link admin-btn"><a href="/users/login" class="">Login</a></li>
+                <% } else { %>
+                    <a href="/users/logout" class="nav-item nav-link">Log Out</a>
+                <% } %>
             </ul>
         </div>
     </div>

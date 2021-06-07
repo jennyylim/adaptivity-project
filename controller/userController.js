@@ -44,11 +44,11 @@ router.post("/register", (req, res) => {
 
   //check pass length
   if (password.length < 6) {
-    errors.push({ msg: "Password have to be more than 6 letters", isLoggedIn: req.user });
+    errors.push({ msg: "Password have to be more than 6 letters", isLoggedIn: req.user});
   }
 
   if (errors.length > 0) {
-    res.render("register", {title: 'Register', errors, name, email, password });
+    res.render("register", {title: 'Register', errors, name, email, password, isLoggedIn: req.user});
   } else {
     User.findOne({ email: email }).then((user) => {
       if (user) {
@@ -98,11 +98,6 @@ router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success_msg", "You are logged out");
   res.redirect("/users/login");
-});
-
-//Job pages
-router.get("/product-manager", ensureAuthenticated, (req, res) => {
-  res.render("product-manager");
 });
 
 router.post("/testone", (req, res) => {

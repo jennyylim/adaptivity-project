@@ -12,7 +12,7 @@ router.get('/andrew', (req, res) => res.render('loginpage+'));
 
 //to change after testing to official links, and add in authentications
 
-router.get("/fed", (req, res) => res.render("frontenddeveloper"));
+router.get("/fed", (req, res) => res.render("frontenddeveloper", { title: 'Front End developer', isLoggedIn: req.user}));
 // router.get("/uiux", (req, res) => res.render(""));
 //product manager
 // router.get("/pm", (req, res) => res.render(""));

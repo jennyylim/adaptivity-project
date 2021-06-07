@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { ensureAuthenticated } = require("../config/auth");
 
-router.get('/', (req, res) => res.render("index"));
+router.get('/', (req, res) => res.render("index", {isLoggedIn: req.user}));
 
 router.get('/graph2', (req, res) => res.render("graph2"));
 

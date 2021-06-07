@@ -168,32 +168,29 @@ a.nav-links:hover {
 }
 
 
-/* -------------------- SIGN UP -------------------- */
+/* -------------------- LOGIN / -------------------- */
+
+.form-control {
+    border-bottom-style: groove;
+}
 
 
-/* .h1.signup {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 800;
-            font-size: 68px;
-            text-align: center;
-            color: #ffffff;
-            padding: 40px 0px;
-        }
-        
-        .container.signup {
+/* .container.signup {
             border: 8px solid #28c49e;
             border-radius: 25px;
             -webkit-border-radius: 25px;
             -moz-border-radius: 25px;
             -ms-border-radius: 25px;
             -o-border-radius: 25px;
-        }
-        
-        .row.signup {
+        } */
+
+
+/* .row.signup {
             padding: 35px;
-        }
-        
-        .img.signup {
+        } */
+
+
+/* .img.signup {
             width: 80%;
             padding: 100px 0;
         } */

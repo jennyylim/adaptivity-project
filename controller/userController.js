@@ -6,14 +6,17 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
 
-router.get("/login", (req, res) => res.render("login"));
+router.get('/login', (req,res) => {
+  res.render('login', { title: 'Login', isLoggedIn: req.user});
+})
 
-router.get("/register", (req, res) => res.render("register"));
+router.get('/register', (req,res) => {
+  res.render('register', { title: 'Register', isLoggedIn: req.user});
+})
 
 router.get("/recommends", ensureAuthenticated, (req, res) => {
   Job.find()
     .then((result) => {
-      result = result.sort(() => Math.random() - 0.5);
       res.render("recommends", { jobs: result });
     })
     .catch((err) => {
@@ -36,27 +39,28 @@ router.post("/register", (req, res) => {
   let errors = [];
   //check required fields
   if (!name || !email || !password) {
-    errors.push({ msg: "Please fill in all fields" });
+    errors.push({ msg: "Please fill in all fields", isLoggedIn: req.user});
   }
 
   //check pass length
   if (password.length < 6) {
-    errors.push({ msg: "Password have to be more than 6 letters" });
+    errors.push({ msg: "Password have to be more than 6 letters", isLoggedIn: req.user });
   }
 
   if (errors.length > 0) {
-    res.render("register", { errors, name, email, password });
+    res.render("register", {title: 'Register', errors, name, email, password });
   } else {
     User.findOne({ email: email }).then((user) => {
       if (user) {
         //user exist
         errors.push({ msg: "Already registered." });
-        res.render("register", { errors, name, email, password });
+        res.render("register", {  title: 'Register', errors, name, email, password,isLoggedIn: req.user });
       } else {
         const newUser = new User({
           name,
           email,
           password,
+          isLoggedIn: req.user,
         });
         //hash password
         bcrypt.genSalt(10, (err, salt) =>

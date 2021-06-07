@@ -62,7 +62,7 @@ app.use((req, res, next) => {
 })
 
 
-app.use('/', require('./routes/security'));
+app.use('/', require('./routes/links'));
 
 app.use('/users', require('./controller/userController'));
 

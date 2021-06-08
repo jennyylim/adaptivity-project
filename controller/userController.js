@@ -20,7 +20,7 @@ router.get("/recommends", ensureAuthenticated, (req, res) => {
       res.render("recommends",{ title: 'Jobs Recommendation', jobs: result, isLoggedIn: req.user});
     })
     .catch((err) => {
-      res.redirect("/error");
+      res.status(404).render('404', { title: 'Error', isLoggedIn: req.user});
     });
 });
 
@@ -76,7 +76,7 @@ router.post("/register", (req, res) => {
                 req.flash("success_msg", "You are registered and can log in.");
                 res.redirect("/users/login");
               })
-              .catch((err) => console.log(err));
+              .catch((err) => res.status(404).render('404', { title: 'Error', isLoggedIn: req.user }));
           })
         );
       }
@@ -113,7 +113,7 @@ router.post("/testone", (req, res) => {
     .then((job) => {
       res.redirect("/job");
     })
-    .catch((err) => res.render('/error'));
+    .catch((err) => res.status(404).render('404', { title: 'Error', isLoggedIn: req.user }));
 });
 
 module.exports = router;

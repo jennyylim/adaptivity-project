@@ -6,7 +6,7 @@ router.get('/', (req, res) => res.render("index", { title: 'Index', isLoggedIn: 
 
 router.get('/graph2', (req, res) => res.render("graph2"));
 
-router.get("/error", (req, res) => res.render("404", { title: 'Error', isLoggedIn: req.user}));
+router.get("/error", (req, res) => res.render('404', { title: 'Error', isLoggedIn: req.user }));
 
 router.get("/job", (req, res) => res.render("job"));
 

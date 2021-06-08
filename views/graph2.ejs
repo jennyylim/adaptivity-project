@@ -3,8 +3,8 @@
         body {
             margin: 0;
         }
-
-        .links line{
+        
+        .links line {
             color: white;
         }
     </style>
@@ -47,10 +47,13 @@
                     3000 // ms transition duration
                 );
 
-                Graph.cameraPosition(
-                    { x: node.x /10000000 , y: node.y /10000000, z: node.z /10000000 }, // new position
+                Graph.cameraPosition({
+                        x: node.x / 10000000,
+                        y: node.y / 10000000,
+                        z: node.z / 10000000
+                    }, // new position
                     node, // lookAt ({ x, y, z })
-                    3000  // ms transition duration
+                    3000 // ms transition duration
                 );
             });
     </script>

@@ -87,11 +87,12 @@ a.nav-links:hover {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    padding: 10px 20px;
+    padding: 8px 20px;
     color: #303030;
     background-color: #28c49e;
     vertical-align: middle;
     text-align: center;
+    text-transform: uppercase;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -138,6 +139,9 @@ a.nav-links:hover {
     background-color: #28c49e;
     vertical-align: middle;
     text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -208,16 +212,17 @@ a.nav-links:hover {
     padding: 40px 0;
 }
 
-.full-stack,
-.manager {
+.assessment,
+.mentor,
+.idea {
     display: block;
     margin: auto;
-    width: 70%;
+    width: 75%;
     text-align: center;
 }
 
 .row.index {
-    padding: 80px 0;
+    padding: 65px 0;
 }
 
 .dummy-text {
@@ -309,4 +314,11 @@ a.nav-links:hover {
 
 .container.py-5 {
     background-color: #000000;
+}
+
+.h2.recommends {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 44px;
+    color: #40edc3;
 }

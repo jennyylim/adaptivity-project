@@ -19,10 +19,10 @@
                     <a class="nav-links" href="https://adaptivity.us/aboutus/">ABOUT ADAPTABILITY</a>
                 </li>
                 <% if(!isLoggedIn){ %>
-                    <li class="nav-list "><a href="/users/login" class="nav-links">Login</a></li>
-                <% } else { %>
-                    <a href="/users/logout" class="nav-links">Log Out</a>
-                <% } %>
+                    <li class="nav-list "><a href="/users/login" class="cta_button sign-in">Login</a></li>
+                    <% } else { %>
+                        <a href="/users/logout" class="cta_button sign-in">Log Out</a>
+                        <% } %>
             </ul>
         </div>
     </div>

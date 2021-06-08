@@ -66,6 +66,6 @@ app.use('/', require('./routes/links'));
 
 app.use('/users', require('./controller/userController'));
 
-app.get('/graph', (req,res) => res.render("forcegraph"));
+app.get('/graph', (req, res) => res.render("forcegraph"));
 
-app.get('/data', (req,res) => res.sendFile(__dirname + '/adaptivity.json'));
+app.get('/data', (req, res) => res.sendFile(__dirname + '/adaptivity.json'));

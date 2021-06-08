@@ -3,6 +3,10 @@
         body {
             margin: 0;
         }
+
+        .links line{
+            color: white;
+        }
     </style>
 
     <script src="//unpkg.com/3d-force-graph"></script>
@@ -28,6 +32,7 @@
                 return sprite;
             })
             .nodeAutoColorBy('group')
+            .linkOpacity(0.5)
             .onNodeClick(node => {
                 // Aim at node from outside it
                 const distance = 40;
@@ -43,7 +48,7 @@
                 );
 
                 Graph.cameraPosition(
-                    { x: node.x / 10000, y: node.y / 10000, z: node.z / 10000 }, // new position
+                    { x: node.x /10000000 , y: node.y /10000000, z: node.z /10000000 }, // new position
                     node, // lookAt ({ x, y, z })
                     3000  // ms transition duration
                 );

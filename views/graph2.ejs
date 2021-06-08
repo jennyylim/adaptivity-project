@@ -35,6 +35,7 @@
             .linkOpacity(0.5)
             .onNodeClick(node => {
                 // Aim at node from outside it
+
                 const distance = 40;
                 const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
 
@@ -52,6 +53,7 @@
                     node, // lookAt ({ x, y, z })
                     3000  // ms transition duration
                 );
+
             });
     </script>
 </body>

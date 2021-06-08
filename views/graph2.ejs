@@ -43,8 +43,13 @@
             .linkOpacity(0.5)
             .onNodeClick(node => {
                 // Aim at node from outside it
-                const modal = document.getElementById("modal-body");
-                modal.innerHTML = `string text ${node.id} string text`
+                const myModal = document.getElementById("modal-body");
+                if (myModal.style.display == "none" || myModal.style.display == '') {
+                    myModal.style.display = "block";
+                    myModal.innerHTML = `string text ${node.id} string text`;
+                } else{
+                    myModal.style.display = "none";
+                }
                 const distance = 40;
                 const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
 

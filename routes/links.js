@@ -28,7 +28,7 @@ router.get("/uiux", (req, res) =>
     })
 );
 //product manager
-// router.get("/pm", (req, res) => res.render(""));
+router.get("/pm", (req, res) => res.render("product-manager", { title: 'Product Manager', isLoggedIn: req.user }));
 //full stack
 
 // data engineer

@@ -6,6 +6,8 @@
     </style>
 
     <script src="//unpkg.com/3d-force-graph"></script>
+    <script src="//unpkg.com/three"></script>
+    <script src="//unpkg.com/three-spritetext"></script>
     <!--<script src="../../dist/3d-force-graph.js"></script>-->
 </head>
 
@@ -18,7 +20,13 @@
         const Graph = ForceGraph3D()
             (elem)
             .jsonUrl('data')
-            .nodeLabel('id')
+            .nodeThreeObject(node => {
+                const sprite = new SpriteText(node.id);
+                sprite.material.depthWrite = false; // make sprite background transparent
+                sprite.color = node.color;
+                sprite.textHeight = node.value;
+                return sprite;
+            })
             .nodeAutoColorBy('group')
             .onNodeClick(node => {
                 // Aim at node from outside it
@@ -32,6 +40,12 @@
                     }, // new position
                     node, // lookAt ({ x, y, z })
                     3000 // ms transition duration
+                );
+
+                Graph.cameraPosition(
+                    { x: node.x / 10000, y: node.y / 10000, z: node.z / 10000 }, // new position
+                    node, // lookAt ({ x, y, z })
+                    3000  // ms transition duration
                 );
             });
     </script>

@@ -69,15 +69,3 @@ app.use('/users', require('./controller/userController'));
 app.get('/graph', (req,res) => res.render("forcegraph"));
 
 app.get('/data', (req,res) => res.sendFile(__dirname + '/adaptivity.json'));
-
-//localhost:4000/testone
-
-// app.post('/testone', (req, res) => {
-//     //posting the data from form at dashboard
-//     const { name, description, image } = req.body;
-//     req.job.save();
-//     console.log(req.body);
-//     //Page redirect after successful. can refer to console.log successful comment if want to be sure
-//     res.redirect('/jobs');
-//     //redirect - feel free to change
-// })

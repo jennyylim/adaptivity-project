@@ -6,26 +6,26 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
 
-router.get('/login', (req,res) => {
-  res.render('login', { title: 'Login', isLoggedIn: req.user});
-})
+router.get("/login", (req, res) => {
+  res.render("login", { title: "Login", isLoggedIn: req.user });
+});
 
-router.get('/register', (req,res) => {
-  res.render('register', { title: 'Register', isLoggedIn: req.user});
-})
+router.get("/register", (req, res) => {
+  res.render("register", { title: "Register", isLoggedIn: req.user });
+});
 
 router.get("/recommends", ensureAuthenticated, (req, res) => {
   Job.find()
     .then((result) => {
-      res.render("recommends", { jobs: result });
+      res.render("recommends",{ title: 'Jobs Recommendation', jobs: result, isLoggedIn: req.user});
     })
     .catch((err) => {
-      console.log(err);
+      res.status(404).render('404', { title: 'Error', isLoggedIn: req.user});
     });
 });
 
 router.get("/assessment", ensureAuthenticated, (req, res) =>
-  res.render("assessment")
+  res.render("assessment", { title: 'Assessment', isLoggedIn: req.user})
 );
 
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
@@ -39,22 +39,39 @@ router.post("/register", (req, res) => {
   let errors = [];
   //check required fields
   if (!name || !email || !password) {
-    errors.push({ msg: "Please fill in all fields", isLoggedIn: req.user});
+    errors.push({ msg: "Please fill in all fields", isLoggedIn: req.user });
   }
 
   //check pass length
   if (password.length < 6) {
-    errors.push({ msg: "Password have to be more than 6 letters", isLoggedIn: req.user});
+    errors.push({
+      msg: "Password have to be more than 6 letters",
+      isLoggedIn: req.user,
+    });
   }
 
   if (errors.length > 0) {
-    res.render("register", {title: 'Register', errors, name, email, password, isLoggedIn: req.user});
+    res.render("register", {
+      title: "Register",
+      errors,
+      name,
+      email,
+      password,
+      isLoggedIn: req.user,
+    });
   } else {
     User.findOne({ email: email }).then((user) => {
       if (user) {
         //user exist
         errors.push({ msg: "Already registered." });
-        res.render("register", {  title: 'Register', errors, name, email, password,isLoggedIn: req.user });
+        res.render("register", {
+          title: "Register",
+          errors,
+          name,
+          email,
+          password,
+          isLoggedIn: req.user,
+        });
       } else {
         const newUser = new User({
           name,
@@ -76,7 +93,7 @@ router.post("/register", (req, res) => {
                 req.flash("success_msg", "You are registered and can log in.");
                 res.redirect("/users/login");
               })
-              .catch((err) => console.log(err));
+              .catch((err) => res.status(404).render('404', { title: 'Error', isLoggedIn: req.user }));
           })
         );
       }
@@ -113,7 +130,9 @@ router.post("/testone", (req, res) => {
     .then((job) => {
       res.redirect("/job");
     })
-    .catch((err) => console.log(err));
+    .catch((err) => res.status(404).render('404', { title: 'Error', isLoggedIn: req.user }));
 });
+
+router.get("/fsd", (req, res) => res.redirect("http://localhost:4000/fsd"));
 
 module.exports = router;

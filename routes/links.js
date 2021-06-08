@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const { ensureAuthenticated } = require("../config/auth");
 
-router.get("/", (req, res) => res.render("index", { isLoggedIn: req.user }));
+router.get('/', (req, res) => res.render("index", { title: 'Index', isLoggedIn: req.user}));
 
 router.get("/graph2", (req, res) => res.render("graph2"));
 
-router.get("/error", (req, res) => res.render("404"));
+router.get("/error", (req, res) => res.render("404", { title: 'Error', isLoggedIn: req.user}));
 
 router.get("/job", (req, res) => res.render("job"));
 

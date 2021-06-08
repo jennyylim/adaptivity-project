@@ -17,15 +17,15 @@ router.get("/register", (req, res) => {
 router.get("/recommends", ensureAuthenticated, (req, res) => {
   Job.find()
     .then((result) => {
-      res.render("recommends", { jobs: result, isLoggedIn: req.user });
+      res.render("recommends",{ title: 'Jobs Recommendation', jobs: result, isLoggedIn: req.user});
     })
     .catch((err) => {
-      console.log(err);
+      res.redirect("/error");
     });
 });
 
 router.get("/assessment", ensureAuthenticated, (req, res) =>
-  res.render("assessment")
+  res.render("assessment", { title: 'Assessment', isLoggedIn: req.user})
 );
 
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
@@ -130,7 +130,7 @@ router.post("/testone", (req, res) => {
     .then((job) => {
       res.redirect("/job");
     })
-    .catch((err) => console.log(err));
+    .catch((err) => res.render('/error'));
 });
 
 router.get("/fsd", (req, res) => res.redirect("http://localhost:4000/fsd"));

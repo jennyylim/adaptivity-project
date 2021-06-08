@@ -1,6 +1,8 @@
 {
     "nodes": [
-        { "id": "Full Stack Developer", "group": 1, "value": 15 },
+        { "id": "Full Stack Developer", "group": 1, "value": 15,
+            "info": "HELLO ITS ME"
+        },
 
         { "id": "Mobile", "group": 1, "value": 8 },
         { "id": "Android", "group": 1, "value": 8 },

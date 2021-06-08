@@ -133,6 +133,4 @@ router.post("/testone", (req, res) => {
     .catch((err) => res.status(404).render('404', { title: 'Error', isLoggedIn: req.user }));
 });
 
-router.get("/fsd", (req, res) => res.redirect("http://localhost:4000/fsd"));
-
 module.exports = router;

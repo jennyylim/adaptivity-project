@@ -49,7 +49,7 @@
 
     <div id="myModal" class="my-modal">
         <div class="my-modal-content">
-            <p id="modalContent"></p>
+            <div id="modalContent"></div>
             </div>
         </div>
 
@@ -72,11 +72,14 @@
                 // Aim at node from outside it
                 const myModal = document.getElementById("myModal");
                 const modalContent = document.getElementById("modalContent");
-                if (myModal.style.display == "none" || myModal.style.display == '') {
-                    myModal.style.display = "block";
-                    modalContent.innerHTML = `string text ${node.id} string text`;
-                } else{
-                    myModal.style.display = "none";
+                if(node.info) {
+                    if (myModal.style.display == "none" || myModal.style.display == '') {
+                        myModal.style.display = "block";
+                        modalContent.innerHTML = `<h5 class="card-title">${node.id}</h5>
+                        <p class="card-text">${node.info}</p>`;
+                    } else {
+                        myModal.style.display = "none";
+                    }
                 }
 
                 const distance = 40;

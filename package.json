@@ -17,5 +17,9 @@
     "devDependencies": {
         "connect-flash": "^0.1.1",
         "express-session": "^1.17.1"
-    }
+    },
+    "scripts": {
+        "start": "node index.js"
+      }
+      
 }

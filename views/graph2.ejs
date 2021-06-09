@@ -7,6 +7,30 @@
         .links line{
             color: white;
         }
+
+        .my-modal {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            overflow: auto;
+            z-index: 1;
+            background-color: rgb(0, 0, 0, 0.4);
+        }
+
+        .my-modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 32px 20px 20px 20px;
+            border: 1px solid black;
+            width: 40%;
+            max-width: 350px;
+            min-width: 350px;
+            align-items: center;
+            position: relative;
+        }
     </style>
 
     <script src="//unpkg.com/3d-force-graph"></script>
@@ -22,9 +46,12 @@
 
 <body>
     <div id="3d-graph"></div>
-                <div class="">
-                    <p id="modal-body"></p>
-                </div>
+
+    <div id="myModal" class="my-modal">
+        <div class="my-modal-content">
+            <p id="modalContent"></p>
+            </div>
+        </div>
 
 
     <script>
@@ -43,31 +70,32 @@
             .linkOpacity(0.5)
             .onNodeClick(node => {
                 // Aim at node from outside it
-                const myModal = document.getElementById("modal-body");
+                const myModal = document.getElementById("myModal");
+                const modalContent = document.getElementById("modalContent");
                 if (myModal.style.display == "none" || myModal.style.display == '') {
                     myModal.style.display = "block";
-                    myModal.innerHTML = `string text ${node.id} string text`;
+                    modalContent.innerHTML = `string text ${node.id} string text`;
                 } else{
                     myModal.style.display = "none";
                 }
+
                 const distance = 40;
-                const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
+                const distRatio = 10000000000000 + distance / Math.hypot(node.x, node.y, node.z);
 
                 Graph.cameraPosition({
-                        x: node.x * distRatio,
-                        y: node.y * distRatio,
-                        z: node.z * distRatio
+                        x: node.x / distRatio,
+                        y: node.y / distRatio,
+                        z: node.z / distRatio
                     }, // new position
                     node, // lookAt ({ x, y, z })
-                    3000 // ms transition duration
+                    3000, // ms transition duration
                 );
-
-                Graph.cameraPosition(
-                    { x: node.x /10000000 , y: node.y /10000000, z: node.z /10000000 }, // new position
-                    node, // lookAt ({ x, y, z })
-                    3000  // ms transition duration
-                );
-
             });
+
+        window.addEventListener('click', function (event) {
+            if (event.target == myModal) {
+                myModal.style.display = "none";
+            }
+        })
     </script>
 </body>

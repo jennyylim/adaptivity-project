@@ -6,7 +6,8 @@
             "info": "Full-Stack Developers are 'all-around developers.' There are familiar with the entire development chain for an app or website, can code front-end to back, and are comfortable with several languages and technologies.",
             "missions": "A full-stack developer comes in contact with the entire chain development of a software or app. In smaller companies, full-stack developers report directly to a CTO. In larger businesses, and depending on the project management style, a scrum master of product/project manager will supervise full- stack developers.",
             "skills": "Full-stack developers must have wide-ranging skills. They can be asked to work on each step during the creation of an app or website--from development to production.",
-            "salary": "$96,000"
+            "salary": "$96,000",
+            "image": "/images/full-stack.png"
         },
 
         { "id": "Mobile", "group": 1, "value": 8 },
@@ -24,7 +25,12 @@
         {
             "id": "Front-End Developer",
             "group": 2,
-            "value": 15
+            "value": 15,
+            "info":"Front-end developers write the UI code for websites and applications. They take care of the way a user interacts with a site or an app.",
+            "missions": "Front-end developers create the codes for displaying a website UI and the elements users need to interplay with the site. They are responsible for making the visual part of the site functional, intuitive, and easy-to-use for visitors. By following the layout and roadmap set up for the development of a site or an app, they build and maintain these interactive components by constantly improving the site to make it more effective and appealing. This is the job for you if you like to create something from nothing and see it used in the real world.",
+            "skills": "Although patience, logic, and pragmatism are often expected from developers, front-end developers must also have a strong sense of design as their work directly impacts the visual identity of brands and websites. Be a bit pragmatic and self-reliant, too, a front-end developer must have a certain awareness of graphics and design. We often have to make small decisions about the interface or re-do what someone else has done. Important prerequisites exist for most front-end developer positions, like full mastery of HTML5 and CSS3 markup elements and Javascript, as well as familiarity with W3C standards. The technologies and practices change often, so you have to stay up to date, and that's not always easy.",
+            "salary": "$75600",
+            "image": "/images/front-end-developer.png"
         },
 
         { "id": "Product Management", "group": 2, "value": 8 },
@@ -48,7 +54,15 @@
         { "id": "Engineer", "group": 3, "value": 8 },
         { "id": "Cloud", "group": 3, "value": 8 },
 
-        { "id": "UI/UX Designer", "group": 4, "value": 15 },
+        { "id": "UI/UX Designer",
+            "group": 4,
+            "value": 15,
+            "info": "UI/UX designers are responsible for overall user satisfaction with a product. Their priority is to continually look for ways to improve the product experience, even for bestselling products that have been on the markets for years.",
+            "missions": "While UI/UX designer responsibilities may vary from company to company, the end goal is always the same: the responsibility of a UI/UX designer is to achieve overall user satisfaction with a product. UI/UX designers continually look for ways to improve the product experience, even for bestselling products that have been on the market for years. <br> They may do this by making the product faster, easier to use, or more fun. Video game patches are a great example because they’re iterative and are often launched in response to user feedback: while the initial product may be perfectly functional, patches are necessary to fix bugs and deal with unforeseen edge cases.",
+            "skills": "Product managers might need to manage a large number of product requests and feedback. So as not to become overwhelmed, rigor and an acute sense of organization under all circumstances are crucial. The position has a technical and a business side, so product managers must, above all, possess excellent leadership and communication qualities in order to explain the product improvements and innovations to the production teams.\n\nLastly, product managers must know how to compromise. They cannot resolve every single problem for all of the users, and they will be obligated to make choices that will have a direct impact on the product.",
+            "salary": "$80,000",
+            "image": "/images/uixu-designer.png"
+        },
 
         { "id": "Marketing", "group": 4, "value": 8 },
         { "id": "CRM", "group": 4, "value": 8 },

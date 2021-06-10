@@ -15,21 +15,60 @@
             height: 100%;
             left: 0;
             top: 0;
-            overflow: auto;
+            overflow-y: initial;
             z-index: 1;
             background-color: rgb(0, 0, 0, 0.4);
         }
         
         .my-modal-content {
-            background-color: #fefefe;
+            /* background-color: rgb(254, 254, 254, 0.9); */
+            background-color: rgba(20, 20, 20, 0.9);
+            color: white;
             margin: 10% auto;
-            padding: 32px 20px 20px 20px;
+            padding: 32px 20px;
             border: 1px solid black;
-            width: 40%;
-            max-width: 350px;
-            min-width: 350px;
+            width: 50%;
+            /* max-width: 350px;
+            min-width: 350px; */
             align-items: center;
             position: relative;
+            border-radius: 10px;
+            height: 50vh;
+            overflow-y: auto;
+        }
+        
+        .my-modal-content::-webkit-scrollbar {
+            width: 12px;
+            /* width of the entire scrollbar */
+        }
+        
+        .my-modal-content::-webkit-scrollbar {
+            background: rgb(0, 0, 0, 0.4);
+            /* color of the tracking area */
+        }
+        
+        .my-modal-content::-webkit-scrollbar-thumb {
+            background-color: #28c49e;
+            /* color of the scroll thumb */
+            border-radius: 45px;
+            /* roundness of the scroll thumb */
+            border: 1px solid #28c49e;
+            /* creates padding around scroll thumb */
+        }
+        
+        .card-title {
+            text-transform: uppercase;
+            text-align: center;
+            color: #28c49e;
+            font-weight: 800;
+            font-size: 21px;
+        }
+        
+        .job {
+            display: block;
+            margin: auto;
+            padding: 0;
+            width: 55%;
         }
     </style>
 
@@ -50,6 +89,7 @@
     <div id="myModal" class="my-modal">
         <div class="my-modal-content">
             <div id="modalContent"></div>
+
         </div>
     </div>
     </div>
@@ -76,15 +116,24 @@
                 if (node.info) {
                     if (myModal.style.display == "none" || myModal.style.display == '') {
                         myModal.style.display = "block";
-                        modalContent.innerHTML = `<h5 class="card-title">${node.id}</h5>
-                        <p class="card-text">${node.info}</p>`;
+                        modalContent.innerHTML = `
+                        <img class="job" src="/images/full-stack.png">
+                        <h4 class="card-title">${node.id}</h4>
+                        <p class="card-text">${node.info}</p>
+                        <h4 class="card-title">MISSIONS</h4>
+                        <p class="card-text">${node.missions}</p>
+                        <h4 class="card-title">SKILLS</h4>
+                        <p class="card-text">${node.skills}</p>
+                        <h4 class="card-title">SALARY</h4>
+                        <p class="card-text">${node.salary}</p>
+                        `
                     } else {
                         myModal.style.display = "none";
                     }
                 }
 
                 const distance = 40;
-                const distRatio = 10000000000000 + distance / Math.hypot(node.x, node.y, node.z);
+                const distRatio = 10000000000000000 + distance / Math.hypot(node.x, node.y, node.z);
 
                 Graph.cameraPosition({
                         x: node.x / distRatio,

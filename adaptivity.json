@@ -1,7 +1,13 @@
 {
-    "nodes": [
-        { "id": "Full Stack Developer", "group": 1, "value": 15,
-            "info": "HELLO ITS ME"},
+    "nodes": [{
+            "id": "Full Stack Developer",
+            "group": 1,
+            "value": 15,
+            "info": "Full-Stack Developers are 'all-around developers.' There are familiar with the entire development chain for an app or website, can code front-end to back, and are comfortable with several languages and technologies.",
+            "missions": "A full-stack developer comes in contact with the entire chain development of a software or app. In smaller companies, full-stack developers report directly to a CTO. In larger businesses, and depending on the project management style, a scrum master of product/project manager will supervise full- stack developers.",
+            "skills": "Full-stack developers must have wide-ranging skills. They can be asked to work on each step during the creation of an app or website--from development to production.",
+            "salary": "$96,000"
+        },
 
         { "id": "Mobile", "group": 1, "value": 8 },
         { "id": "Android", "group": 1, "value": 8 },
@@ -15,7 +21,11 @@
         { "id": "Frontend", "group": 1, "value": 8 },
         { "id": "Engineering", "group": 1, "value": 8 },
 
-        { "id": "Front-End Developer", "group": 2, "value": 15 },
+        {
+            "id": "Front-End Developer",
+            "group": 2,
+            "value": 15
+        },
 
         { "id": "Product Management", "group": 2, "value": 8 },
         { "id": "UI", "group": 2, "value": 8 },
@@ -38,7 +48,7 @@
         { "id": "Engineer", "group": 3, "value": 8 },
         { "id": "Cloud", "group": 3, "value": 8 },
 
-        { "id": "UI/UX Designer", "group": 4, "value": 15},
+        { "id": "UI/UX Designer", "group": 4, "value": 15 },
 
         { "id": "Marketing", "group": 4, "value": 8 },
         { "id": "CRM", "group": 4, "value": 8 },

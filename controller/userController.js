@@ -17,15 +17,19 @@ router.get("/register", (req, res) => {
 router.get("/recommends", ensureAuthenticated, (req, res) => {
   Job.find()
     .then((result) => {
-      res.render("recommends",{ title: 'Jobs Recommendation', jobs: result, isLoggedIn: req.user});
+      res.render("recommends", {
+        title: "Jobs Recommendation",
+        jobs: result,
+        isLoggedIn: req.user,
+      });
     })
     .catch((err) => {
-      res.status(404).render('404', { title: 'Error', isLoggedIn: req.user});
+      res.status(404).render("404", { title: "Error", isLoggedIn: req.user });
     });
 });
 
 router.get("/assessment", ensureAuthenticated, (req, res) =>
-  res.render("assessment", { title: 'Assessment', isLoggedIn: req.user})
+  res.render("assessment", { title: "Assessment", isLoggedIn: req.user })
 );
 
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
@@ -93,7 +97,11 @@ router.post("/register", (req, res) => {
                 req.flash("success_msg", "You are registered and can log in.");
                 res.redirect("/users/login");
               })
-              .catch((err) => res.status(404).render('404', { title: 'Error', isLoggedIn: req.user }));
+              .catch((err) =>
+                res
+                  .status(404)
+                  .render("404", { title: "Error", isLoggedIn: req.user })
+              );
           })
         );
       }
@@ -130,7 +138,16 @@ router.post("/testone", (req, res) => {
     .then((job) => {
       res.redirect("/job");
     })
-    .catch((err) => res.status(404).render('404', { title: 'Error', isLoggedIn: req.user }));
+    .catch((err) =>
+      res.status(404).render("404", { title: "Error", isLoggedIn: req.user })
+    );
 });
 
 module.exports = router;
+
+// <--- How to potentially setup a link from AI Recommends page to zoom in on respective node --->
+
+// 1. Create a route for each job that will render the "graph2" page (router.get("/product-manager") blah blah res.render("/graph2")).
+// 2. Use "connect-flash" to pass an object assigned a unique field specific to the job to the "graph2" page, example: {id: "Product Manager"}.
+// 3. Use a function like "onLoad" or try creating a html element like a div and make its id the unique id.
+// 4. Use the "onLoad" function to trigger the zoom onto the node. Use an "if/else" to check which job node needs to be zoomed in.

@@ -93,8 +93,6 @@
         { "id": "Finance", "group": 5, "value": 8 },
         { "id": "Operations", "group": 5, "value": 8 }
 
-
-
     ],
     "links": [
         { "source": "Mobile", "target": "Full Stack Developer", "value": 5 },

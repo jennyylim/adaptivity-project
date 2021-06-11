@@ -4,7 +4,7 @@ const { ensureAuthenticated } = require("../config/auth");
 
 router.get('/', (req, res) => res.render("index", { title: 'Index', isLoggedIn: req.user }));
 
-router.get("/graph2", (req, res) => res.render("graph2"));
+router.get("/ai-recommends", ensureAuthenticated, (req, res) => res.render("ai-recommends"));
 
 router.get("/error", (req, res) => res.render('404', { title: 'Error', isLoggedIn: req.user }));
 

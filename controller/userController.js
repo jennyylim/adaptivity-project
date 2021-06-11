@@ -125,24 +125,6 @@ router.get("/logout", (req, res) => {
   res.redirect("/users/login");
 });
 
-router.post("/testone", (req, res) => {
-  const { name, description, image, link } = req.body;
-  const newJob = new Job({
-    name,
-    description,
-    image,
-    link,
-  });
-  newJob
-    .save()
-    .then((job) => {
-      res.redirect("/job");
-    })
-    .catch((err) =>
-      res.status(404).render("404", { title: "Error", isLoggedIn: req.user })
-    );
-});
-
 module.exports = router;
 
 // <--- How to potentially setup a link from AI Recommends page to zoom in on respective node --->

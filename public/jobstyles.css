@@ -10705,6 +10705,7 @@ h1,
 p.lead {
     font-size: 1.15rem;
     font-weight: 400;
+    text-transform: uppercase;
     color: #9B9B9B;
 }
 
@@ -10826,11 +10827,9 @@ section.resume-section .resume-section-content {
     }
 }
 
-.product-manager {
-    /* display: block;
-    margin: auto; */
-    padding-bottom: 40px;
-    width: 350px;
+.jobs-img {
+    padding-bottom: 20px;
+    width: 450px;
 }
 
 .back-button {
@@ -10839,8 +10838,8 @@ section.resume-section .resume-section-content {
     margin-top: 35px;
     padding: 10px 15px;
     background-color: #ffffff;
-    width: 175px;
-    border: 0px;
+    width: 180px;
+    border: 2px solid white;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -10854,7 +10853,7 @@ section.resume-section .resume-section-content {
 }
 
 .back-button:hover {
-    background-color: #284FC4;
+    background-color: transparent;
     border-radius: 200px;
     -webkit-border-radius: 200px;
     -moz-border-radius: 200px;

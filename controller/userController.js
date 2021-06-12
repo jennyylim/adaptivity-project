@@ -6,23 +6,30 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const { ensureAuthenticated } = require("../config/auth");
 
-router.get("/login", (req, res) => res.render("login"));
+router.get("/login", (req, res) => {
+  res.render("login", { title: "Login", isLoggedIn: req.user });
+});
 
-router.get("/register", (req, res) => res.render("register"));
+router.get("/register", (req, res) => {
+  res.render("register", { title: "Register", isLoggedIn: req.user });
+});
 
 router.get("/recommends", ensureAuthenticated, (req, res) => {
   Job.find()
     .then((result) => {
-      result = result.sort(() => Math.random() - 0.5);
-      res.render("recommends", { jobs: result });
+      res.render("recommends", {
+        title: "Jobs Recommendation",
+        jobs: result,
+        isLoggedIn: req.user,
+      });
     })
     .catch((err) => {
-      console.log(err);
+      res.status(404).render("404", { title: "Error", isLoggedIn: req.user });
     });
 });
 
 router.get("/assessment", ensureAuthenticated, (req, res) =>
-  res.render("assessment")
+  res.render("assessment", { title: "Assessment", isLoggedIn: req.user })
 );
 
 router.get("/dashboard", ensureAuthenticated, (req, res) =>
@@ -36,27 +43,45 @@ router.post("/register", (req, res) => {
   let errors = [];
   //check required fields
   if (!name || !email || !password) {
-    errors.push({ msg: "Please fill in all fields" });
+    errors.push({ msg: "Please fill in all fields", isLoggedIn: req.user });
   }
 
   //check pass length
   if (password.length < 6) {
-    errors.push({ msg: "Password have to be more than 6 letters" });
+    errors.push({
+      msg: "Password have to be more than 6 letters",
+      isLoggedIn: req.user,
+    });
   }
 
   if (errors.length > 0) {
-    res.render("register", { errors, name, email, password });
+    res.render("register", {
+      title: "Register",
+      errors,
+      name,
+      email,
+      password,
+      isLoggedIn: req.user,
+    });
   } else {
     User.findOne({ email: email }).then((user) => {
       if (user) {
         //user exist
         errors.push({ msg: "Already registered." });
-        res.render("register", { errors, name, email, password });
+        res.render("register", {
+          title: "Register",
+          errors,
+          name,
+          email,
+          password,
+          isLoggedIn: req.user,
+        });
       } else {
         const newUser = new User({
           name,
           email,
           password,
+          isLoggedIn: req.user,
         });
         //hash password
         bcrypt.genSalt(10, (err, salt) =>
@@ -72,7 +97,11 @@ router.post("/register", (req, res) => {
                 req.flash("success_msg", "You are registered and can log in.");
                 res.redirect("/users/login");
               })
-              .catch((err) => console.log(err));
+              .catch((err) =>
+                res
+                  .status(404)
+                  .render("404", { title: "Error", isLoggedIn: req.user })
+              );
           })
         );
       }
@@ -84,7 +113,7 @@ router.post("/register", (req, res) => {
 
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", {
-    successRedirect: "/users/dashboard",
+    successRedirect: "/users/assessment",
     failureRedirect: "/users/login",
     failureFlash: true,
   })(req, res, next);
@@ -96,25 +125,11 @@ router.get("/logout", (req, res) => {
   res.redirect("/users/login");
 });
 
-//Job pages
-router.get("/product-manager", ensureAuthenticated, (req, res) => {
-  res.render("product-manager");
-});
-
-router.post("/testone", (req, res) => {
-  const { name, description, image, link } = req.body;
-  const newJob = new Job({
-    name,
-    description,
-    image,
-    link,
-  });
-  newJob
-    .save()
-    .then((job) => {
-      res.redirect("/job");
-    })
-    .catch((err) => console.log(err));
-});
-
 module.exports = router;
+
+// <--- How to potentially setup a link from AI Recommends page to zoom in on respective node --->
+
+// 1. Create a route for each job that will render the "graph2" page (router.get("/product-manager") blah blah res.render("/graph2")).
+// 2. Use "connect-flash" to pass an object assigned a unique field specific to the job to the "graph2" page, example: {id: "Product Manager"}.
+// 3. Use a function like "onLoad" or try creating a html element like a div and make its id the unique id.
+// 4. Use the "onLoad" function to trigger the zoom onto the node. Use an "if/else" to check which job node needs to be zoomed in.

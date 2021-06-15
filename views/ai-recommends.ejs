@@ -17,6 +17,9 @@
 </head>
 
 <body>
+<% if(isLoggedIn){ %>
+    <button class="logout-button"><a href="/users/logout">Log Out</a></button>
+<% } %>
     <div id="3d-graph"></div>
     <div id="myModal" class="my-modal">
         <div class="my-modal-content">
@@ -24,14 +27,6 @@
 
         </div>
     </div>
-    <div class="cta_button login">
-        <% if(!isLoggedIn){ %>
-            <li class="nav-list "><a href="/users/login" class="cta_button sign-in">Login</a></li>
-        <% } else { %>
-            <a href="/users/logout" class="cta_button sign-in">Log Out</a>
-        <% } %>
-    </div>
-
 
     <script>
         const elem = document.getElementById('3d-graph');

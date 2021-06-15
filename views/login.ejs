@@ -4,22 +4,27 @@
 <%- include('./partials/head.ejs')%>
 
     <body>
-        <div class="container text-center centered">
+        <div class="container login">
             <div class="row">
-                <div class="col-lg-6 mx-auto">
+                <div class="col-lg mx-auto">
                     <form action="/users/login" method="POST" class="form-signin">
-                        <!--    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
-                        <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
+                        <a href="/"><img class="logo login" src="/images/logo - white.png"></a>
+
+                        <h3 class="h3 mb-3 font-weight-normal">Welcome back!</h3>
+
                         <%- include('./partials/message.ejs')%>
+
                             <label for="email" class="sr-only">Email address</label>
                             <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
                             <br>
+
                             <label for="password" class="sr-only">Password</label>
                             <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
                             <br>
-                            <button class="btn btn-warning btn-block" type="submit">Sign in</button>
+
+                            <button class="cta_button login" type="submit">Sign in</button>
                     </form>
-                    <p class="mt-3">No account? <a href="/users/register">Register</a></p>
+                    <p class="mt-3">No account? <a class="register" href="/users/register">Register</a>
                 </div>
             </div>
         </div>

@@ -1,13 +1,8 @@
 const express = require('express');
-const expressLayouts = require('express-ejs-layouts');
-const morgan = require('morgan');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
-const bodyParser = require('body-parser');
-const user = require('./model/user');
-const job = require('./model/job');
 const app = express();
 const dbURI = require('./config/keys').MongoURI;
 
@@ -65,7 +60,5 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/links'));
 
 app.use('/users', require('./controller/userController'));
-
-app.get('/graph', (req, res) => res.render("forcegraph"));
 
 app.get('/data', (req, res) => res.sendFile(__dirname + '/adaptivity.json'));

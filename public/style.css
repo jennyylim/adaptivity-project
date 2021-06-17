@@ -171,9 +171,6 @@ a.nav-links:hover {
     padding: 20px;
 }
 
-
-/* -------------------- LOGIN / -------------------- */
-
 .form-control {
     border-bottom-style: groove;
 }
@@ -333,7 +330,7 @@ a.nav-links:hover {
 }
 
 
-/* ---------------- Login ----------------*/
+/* ---------------- Login + Register ----------------*/
 
 .container.login {
     position: absolute;
@@ -401,7 +398,7 @@ a.nav-links:hover {
 .logout-button {
     z-index: 1;
     margin-left: 90%;
-    margin-top: px;
+    margin-top: 35px;
     padding: 8px 20px;
     background-color: #28c49e;
     color: #fff;

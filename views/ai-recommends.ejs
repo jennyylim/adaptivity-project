@@ -17,41 +17,41 @@
 </head>
 
 <body>
-    <% if(isLoggedIn){ %>
-        <button class="logout-button"><a class="logout" href="/users/logout"></a>Log Out</button></a>
-        <% } %>
-            <div id="3d-graph"></div>
-            <div id="myModal" class="my-modal">
-                <div class="my-modal-content">
-                    <div id="modalContent"></div>
 
-                </div>
+    <%- include('./partials/navbar.ejs')%>
+
+        <div id="3d-graph"></div>
+        <div id="myModal" class="my-modal">
+            <div class="my-modal-content">
+                <div id="modalContent"></div>
+
             </div>
+        </div>
 
-            <script>
-                var body = document.getElementsByTagName("body")
+        <script>
+            var body = document.getElementsByTagName("body")
 
-                const elem = document.getElementById('3d-graph');
-                const Graph = ForceGraph3D()
-                    (elem)
-                    .jsonUrl('data')
-                    .nodeThreeObject(node => {
-                        const sprite = new SpriteText(node.id);
-                        sprite.material.depthWrite = false; // make sprite background transparent
-                        sprite.color = node.color;
-                        sprite.textHeight = node.value;
-                        return sprite;
-                    })
-                    .nodeAutoColorBy('group')
-                    .linkOpacity(0.5)
-                    .onNodeClick(node => {
-                        // Aim at node from outside it
-                        const myModal = document.getElementById("myModal");
-                        const modalContent = document.getElementById("modalContent");
-                        if (node.info) {
-                            if (myModal.style.display == "none" || myModal.style.display == '') {
-                                myModal.style.display = "block";
-                                modalContent.innerHTML = `
+            const elem = document.getElementById('3d-graph');
+            const Graph = ForceGraph3D()
+                (elem)
+                .jsonUrl('data')
+                .nodeThreeObject(node => {
+                    const sprite = new SpriteText(node.id);
+                    sprite.material.depthWrite = false; // make sprite background transparent
+                    sprite.color = node.color;
+                    sprite.textHeight = node.value;
+                    return sprite;
+                })
+                .nodeAutoColorBy('group')
+                .linkOpacity(0.5)
+                .onNodeClick(node => {
+                    // Aim at node from outside it
+                    const myModal = document.getElementById("myModal");
+                    const modalContent = document.getElementById("modalContent");
+                    if (node.info) {
+                        if (myModal.style.display == "none" || myModal.style.display == '') {
+                            myModal.style.display = "block";
+                            modalContent.innerHTML = `
                         <img class="job" src="${node.image}">
                         <h4 class="card-title">${node.id}</h4>
                         <p class="card-text">${node.info}</p>
@@ -62,28 +62,29 @@
                         <h4 class="card-title">SALARY</h4>
                         <p class="card-text">${node.salary}</p>
                         `
-                            } else {
-                                myModal.style.display = "none";
-                            }
+                        } else {
+                            myModal.style.display = "none";
                         }
-
-                        const distance = 40;
-                        const distRatio = 10000000000000000 + distance / Math.hypot(node.x, node.y, node.z);
-
-                        Graph.cameraPosition({
-                                x: node.x / distRatio,
-                                y: node.y / distRatio,
-                                z: node.z / distRatio
-                            }, // new position
-                            node, // lookAt ({ x, y, z })
-                            3000, // ms transition duration
-                        );
-                    });
-
-                window.addEventListener('click', function(event) {
-                    if (event.target == myModal) {
-                        myModal.style.display = "none";
                     }
-                })
-            </script>
+
+                    const distance = 40;
+                    const distRatio = 10000000000000000 + distance / Math.hypot(node.x, node.y, node.z);
+
+                    Graph.cameraPosition({
+                            x: node.x / distRatio,
+                            y: node.y / distRatio,
+                            z: node.z / distRatio
+                        }, // new position
+                        node, // lookAt ({ x, y, z })
+                        3000, // ms transition duration
+                    );
+                });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == myModal) {
+                    myModal.style.display = "none";
+                }
+            })
+        </script>
+        <%- include('./partials/footer.ejs')%>
 </body>

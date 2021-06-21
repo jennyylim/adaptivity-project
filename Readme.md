@@ -37,7 +37,7 @@ Click [here](https://adaptivity.herokuapp.com/) for a live demo of the site host
 
 ### AI Recommends Page
 
-![Ai-recommends page](https://github.com/jennyylim/adaptivity-project/blob/jenny-branch/public/images/graph.gif.)
+![Ai-recommends page](https://github.com/jennyylim/adaptivity-project/blob/jenny-branch/public/images/graph.gif)
 
 
 

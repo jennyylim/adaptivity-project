@@ -9,6 +9,7 @@
   - [Landing Page](#landing-page)
   - [Login Page](#login-page)
   - [AI Recommends Page](#ai-recommends-page)
+- [Built With](#built-with)
 
 ## About The Project
 
@@ -38,6 +39,15 @@ Click [here](https://adaptivity.herokuapp.com/) for a live demo of the site host
 ### AI Recommends Page
 
 ![Ai-recommends page](https://github.com/jennyylim/adaptivity-project/blob/jenny-branch/public/images/graph.gif)
+
+## Built With
+
+1. NodeJS
+2. Express
+3. MongoDB
+4. CSS
+5. JavaScript
+   
 
 
 

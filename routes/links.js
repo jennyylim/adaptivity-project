@@ -12,32 +12,33 @@ router.get("/error", (req, res) => res.render('404', { title: 'Error', isLoggedI
 //to change after testing to official links, and add in authentications
 
 router.get("/fed", (req, res) =>
-    res.render("frontenddeveloper", {
+    res.render("jobs/frontenddeveloper", {
         title: "Front End developer",
         isLoggedIn: req.user,
     })
 );
 
 router.get("/uiux", (req, res) =>
-    res.render("uiux-designer", {
+    res.render("jobs/uiux-designer", {
         title: "UI/UX Designer",
         isLoggedIn: req.user,
     })
 );
 //product manager
-router.get("/pm", (req, res) => res.render("product-manager", { title: 'Product Manager', isLoggedIn: req.user }));
+router.get("/pm", (req, res) => res.render("jobs/product-manager",
+    { title: 'Product Manager', isLoggedIn: req.user }));
 //full stack
 
 // data engineer
 router.get("/de", (req, res) =>
-    res.render("data-engineer", {
+    res.render("jobs/data-engineer", {
         title: "Data Engineer",
         isLoggedIn: req.user,
     })
 );
 
 router.get("/fsd", (req, res) =>
-    res.render("fullstack-dev", {
+    res.render("jobs/fullstack-dev", {
         title: "Full Stack Developer",
         isLoggedIn: req.user,
     })

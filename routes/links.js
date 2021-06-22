@@ -11,36 +11,35 @@ router.get("/error", (req, res) => res.render('404', { title: 'Error', isLoggedI
 
 //to change after testing to official links, and add in authentications
 
-router.get("/frontend-developer", (req, res) =>
+router.get("/fed", (req, res) =>
     res.render("frontenddeveloper", {
         title: "Front End developer",
         isLoggedIn: req.user,
     })
 );
 
-router.get("/uiux-designer", (req, res) =>
+router.get("/uiux", (req, res) =>
     res.render("uiux-designer", {
         title: "UI/UX Designer",
         isLoggedIn: req.user,
     })
 );
 //product manager
-router.get("/product-manager", (req, res) => res.render("product-manager", { title: 'Product Manager', isLoggedIn: req.user }));
+router.get("/pm", (req, res) => res.render("product-manager", { title: 'Product Manager', isLoggedIn: req.user }));
 //full stack
 
 // data engineer
-router.get("/data-engineer", (req, res) =>
+router.get("/de", (req, res) =>
     res.render("data-engineer", {
         title: "Data Engineer",
         isLoggedIn: req.user,
     })
 );
 
-router.get("/fullstack-developer", (req, res) =>
+router.get("/fsd", (req, res) =>
     res.render("fullstack-dev", {
         title: "Full Stack Developer",
         isLoggedIn: req.user,
     })
 );
-
 module.exports = router;

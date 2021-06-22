@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true })); // a middleware that allow drawing of input for data from form
 
-var MongoDBStore = require('connect-mongodb-session')(session);
+const MongoDBStore = require('connect-mongodb-session')(session);
 
 const store = new MongoDBStore({
     uri: dbURI,

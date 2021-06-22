@@ -185,7 +185,7 @@ a.nav-links:hover {
     font-size: 44px;
     color: #28c49e;
     text-align: center;
-    padding: 40px 0;
+    padding: 65px 0;
 }
 
 .assessment,
@@ -198,7 +198,7 @@ a.nav-links:hover {
 }
 
 .row.index {
-    padding: 65px 0;
+    padding: 35px 0;
 }
 
 .dummy-text {
@@ -483,7 +483,7 @@ a.nav-links:hover {
 }
 
 .my-modal-content::-webkit-scrollbar-thumb {
-    background-color: #28c49e;
+    background-color: Fh2#28c49e;
     /* color of the scroll thumb */
     border-radius: 45px;
     /* roundness of the scroll thumb */
@@ -495,13 +495,33 @@ a.nav-links:hover {
     text-transform: uppercase;
     text-align: center;
     color: #28c49e;
+    font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-size: 21px;
+    padding-top: 35px;
 }
 
 .job {
     display: block;
     margin: auto;
     padding: 0;
-    width: 55%;
+    width: 65%;
+}
+
+.card-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    padding-top: 20px;
+    line-height: 35px;
+}
+
+.card-text.salary {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    padding-top: 25px;
+    text-align: center;
 }
